@@ -418,7 +418,7 @@ font:
   enable: true
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
-  host: fonts.lug.ustc.edu.cn
+  host: //fonts.lug.ustc.edu.cn
 
 
   # Font options:
