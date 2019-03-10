@@ -84,10 +84,10 @@ theme: next
 deploy:
 - type: git
   repo: git@github.com:LJ147/LJ147.github.io.git
-- type: git
-  repo: git@git.coding.net:code233/code233.git
   bucket: hellogod.cn
 # - type: baidu_url_submitter ## 这是新加的
+# - type: git
+#   repo: git@git.coding.net:code233/code233.git
 
 backup:
     type: git
