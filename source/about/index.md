@@ -17,7 +17,7 @@ comments: true
  ![](https://ws3.sinaimg.cn/large/006tNbRwgy1fuide3ducfj31kw0g9q6o.jpg)
 
 
-欢迎关注微信公众号，随时获取最新文章。
+欢迎关注微信公众号，及时获取最新文章。
 
 # 教育背景
 
@@ -49,20 +49,12 @@ comments: true
 - [罗维-360高级算法工程师](http://vividfree.github.io)
 - [刘建平Pinard 十年码农](https://www.cnblogs.com/pinard)
 
-# 常用链接
-
-- [Java课程主页：The Java course site for undergraduates of ISS-WHU.](https://iss-java.github.io/)
-
 
 # 关于博客
 
 本博客基于 [Hexo](hexo.io) 的 [Next](https://github.com/iissnan/hexo-theme-next) 主题搭建，托管于 [GitHub Pages](https://pages.github.com) 和 [Coding Pages](https://pages.coding.net) ，博客logo来自 [iconfont](http://www.iconfont.cn/collections/detail?cid=8530)。
  
-还在使用的其余的在线博客如[CSDN： hello曹真](https://blog.csdn.net/AGodJ)和[简书：曹真](https://www.jianshu.com/u/fc5814d052af)。
  
-# 关于评论
-
- 评论基于 [Disqus](https://disqus.com/)，可能需要科学上网且全局模式才能顺利加载，欢迎留言与我交流。
 
 
 
