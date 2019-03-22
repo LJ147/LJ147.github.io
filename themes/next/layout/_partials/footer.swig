@@ -37,23 +37,9 @@
   {% endif %}
 </div>
 
-{% if theme.footer.powered.enable %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}{#
-  #}{% if theme.footer.powered.version %} v{{ hexo_env('version') }}{% endif %}{#
- #}</div>
-{% endif %}
-
-{% if theme.footer.powered.enable and theme.footer.theme.enable %}
-  <span class="post-meta-divider">|</span>
-{% endif %}
-
-{% if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} – {{ next_url('https://theme-next.org', 'NexT.' + theme.scheme, {class: 'theme-link'}) }}{#
-  #}{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
-#}</div>
-{% endif %}
+<div style="text-align:center;width:100%;height:50">
+  豫ICP备17006732号-1
+<div>
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
