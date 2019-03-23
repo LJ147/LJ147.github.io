@@ -551,7 +551,7 @@ baidu_analytics: f0bed23c03bfeb07d49563f032c53d63
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: hellogod-cn
   count: false
 
@@ -565,12 +565,12 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
-  notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid: CuiDxvnBoyM2EVF2urcFe2Bg-gzGzoHsz # your leancloud application appid
+  appkey: SiCP6kVs2SnB69DMmASW4cgJ # your leancloud application appkey
+  notify: true # mail notifier, See: https://github.com/xCss/Valine/wiki
+  verify: true # Verification code
+  placeholder: Leave a message! # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
