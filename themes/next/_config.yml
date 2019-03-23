@@ -569,7 +569,7 @@ valine:
   appid: CuiDxvnBoyM2EVF2urcFe2Bg-gzGzoHsz # your leancloud application appid
   appkey: SiCP6kVs2SnB69DMmASW4cgJ # your leancloud application appkey
   notify: true # mail notifier, See: https://github.com/xCss/Valine/wiki
-  verify: true # Verification code
+  verify: false # Verification code
   placeholder: Leave a message! # comment box placeholder
   avatar: monsterid # gravatar style
   guest_info: nick,mail,link # custom comment header
