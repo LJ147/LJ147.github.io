@@ -571,7 +571,7 @@ valine:
   notify: true # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: true # Verification code
   placeholder: Leave a message! # comment box placeholder
-  avatar: mm # gravatar style
+  avatar: monsterid # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
