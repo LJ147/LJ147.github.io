@@ -8,9 +8,15 @@ comments: true
 
 # 1. 博客
 
+
+
 博客的目的是记录学习，记录生活，总结回顾，若能长久坚持，想来也是一件很有意义的事情。
 
-本博客基于 [Hexo](hexo.io) 的 [Next](https://github.com/iissnan/hexo-theme-next) 主题搭建，托管于 [GitHub Pages](https://pages.github.com) ，博客logo来自 [iconfont](http://www.iconfont.cn/collections/detail?cid=8530)。
+
+
+本博客基于 [Hexo](hexo.io) 的 [Next](https://github.com/iissnan/hexo-theme-next) 主题搭建，托管于 [GitHub Pages](https://pages.github.com) ，博客logo来自 [iconfont](http://www.iconfont.cn/collections/detail?cid=8530)。博客的 Github repo 地址为： [LJ147.github.io](https://github.com/LJ147/LJ147.github.io) 。
+
+
 
 博客已经开通评论，欢迎您与我随时沟通交流。
 
@@ -22,7 +28,7 @@ comments: true
 
 
 
-欢迎关注我的个人微信公众号，及时获取最新文章。
+欢迎您关注我的个人微信公众号：**一时博客**，获取最新文章。
 
 
 
@@ -38,7 +44,7 @@ comments: true
 
 | 时间 | 公司 | 城市 | 岗位 | 方向 |
 | --- | --- | --- | --- | --- |
-| 2019.7 - ？(待入职) | 拼多多 | 上海 | 算法工程师 | 推荐 |
+| 2019.7 -        | 拼多多 | 上海 | 算法工程师 | 推荐 |
 | 2018.7 - 2018.9 | 腾讯WXG | 深圳 | 应用研究实习生 | 推荐、广告 |
 | 2018.3 - 2018.6 | 字节跳动 | 北京 | 数据挖掘实习生 | 复杂网络 |
 
