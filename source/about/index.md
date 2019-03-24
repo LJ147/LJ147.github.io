@@ -14,10 +14,6 @@ comments: true
 
 
 
-本博客基于 [Hexo](hexo.io) 的 [Next](https://github.com/iissnan/hexo-theme-next) 主题搭建，托管于 [GitHub Pages](https://pages.github.com) ，博客logo来自 [iconfont](http://www.iconfont.cn/collections/detail?cid=8530)。博客的 Github repo 地址为： [LJ147.github.io](https://github.com/LJ147/LJ147.github.io) 。
-
-
-
 博客已经开通评论，欢迎您与我随时沟通交流。
 
 
@@ -66,7 +62,11 @@ comments: true
 
 
 
- 
+#  5. 博客构建
+
+
+
+本博客基于 [Hexo](hexo.io) 的 [Next](https://github.com/iissnan/hexo-theme-next) 主题搭建，托管于 [GitHub Pages](https://pages.github.com) ，博客logo来自 [iconfont](http://www.iconfont.cn/collections/detail?cid=8530)。博客的 Github repo 地址为： [LJ147.github.io](https://github.com/LJ147/LJ147.github.io) 。
 
 
 
