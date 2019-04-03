@@ -8,14 +8,24 @@ categories: 推荐系统
 date: 2019-01-10 17:13:38
 updated: 2019-01-10 17:13:38
 description: 增强学习在推荐系统上的应用
-keyword:
+keyword: 
+  - 强化学习
+  - 推荐系统
 ---
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fz1mmtg4iij30xc0fkju1.jpg)
 
 <!-- more -->
 
-# 公司成果：
+# 1.介绍
+
+待完善
+
+
+
+# 2.论文
+
+## 2.1 公司成果
 
 - [美团：强化学习在美团“猜你喜欢”的实践 [2018] ](https://tech.meituan.com/reinforcement_learning_in_mt_recommend_system.html)
 - [阿里：强化学习在淘宝锦囊推荐系统中的应用 [2018]](https://link.zhihu.com/?target=http%3A//techforum-img.cn-hangzhou.oss-pub.aliyun-inc.com/1517812754285/reinforcement_learning.pdf)
@@ -26,7 +36,9 @@ keyword:
 - [京东：Recommendations with Negative Feedback via Pairwise Deep Reinforcement Learning.[2018] ](https://arxiv.org/abs/1802.06501)
 - [京东：Deep Reinforcement Learning for Page-wise Recommendations. [2018]](https://arxiv.org/abs/1805.02343)
 
-# 论文：
+
+
+## 2.2 其它论文
 
 - [2018 - Recommendations with Negative Feedback via Pairwise Deep Reinforcement Learning](https://arxiv.org/abs/1802.06501)
 - [2018 - Recent Advances in Recommender Systems: Matrices, Bandits, and Blenders](https://openproceedings.org/2018/conf/edbt/georgiakoutrika.pdf)
@@ -34,18 +46,19 @@ keyword:
 - [2014 - Bandits Warm-up Cold Recommender Systems](https://arxiv.org/abs/1407.2806)
 - [2010 - A Contextual-Bandit Approach to Personalized News Article Recommendation](https://arxiv.org/abs/1003.0146)
 
-# 应用场景：
+
+
+# 3.应用场景
 
 一般用于连续翻页的多轮交互场景
 
-# 优缺点：
+# 4.优缺点
 
-## 缺点
-
-强化学习训练不稳定、难以收敛、学习效率低、要求海量训练数据
-
-## 优点
+## 4.1 优点
 
 - exploit与explore问题，对已知信息合理利用的基础上进行适当探索，提升用户体验
 - cold start 问题
 
+## 4.2 缺点
+
+强化学习训练不稳定、难以收敛、学习效率低、要求海量训练数据
