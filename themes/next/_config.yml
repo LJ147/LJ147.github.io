@@ -653,10 +653,10 @@ needmoreshare2:
 # See: https://www.google.com/webmasters
 #google_site_verification:
 
-# Google Analytics
-# google_analytics:
-#  tracking_id: UA-96527706-1
-#  localhost_ignored: true
+Google Analytics
+google_analytics:
+ tracking_id: UA-96527706-1
+ localhost_ignored: true
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
