@@ -653,7 +653,7 @@ needmoreshare2:
 # See: https://www.google.com/webmasters
 #google_site_verification:
 
-Google Analytics
+# Google Analytics
 google_analytics:
  tracking_id: UA-96527706-1
  localhost_ignored: true
