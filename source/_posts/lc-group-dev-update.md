@@ -8,10 +8,20 @@ keyword:
 date: 2019-04-03 12:23:20
 updated: 2019-04-03 12:23:20
 categories: 日常
-description: https://group.hellogod.cn 更新日志，常见 QA
+description: https://group.hellogod.cn 更新日志，常见 FQA
 ---
 
 # 1.更新日志
+
+- 添加小组统计数据，新增 datatable 表格(排序、搜索、分页)
+
+时间： 2019-04-05 12:21:28
+
+![image-20190405122124911](https://ws3.sinaimg.cn/large/006tNc79gy1g1rn2nk16hj31r50u0gpa.jpg)
+
+![image-20190405122353852](https://ws2.sinaimg.cn/large/006tNc79gy1g1rn58bdk6j31gk0u04ea.jpg)
+
+
 
 - 将长期未打卡的用户除名 
 
