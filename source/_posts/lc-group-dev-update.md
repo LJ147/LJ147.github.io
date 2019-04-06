@@ -17,7 +17,7 @@ description: https://group.hellogod.cn 更新日志，常见 FQA
 
 时间： 2019-04-05 12:21:28
 
-<center>打卡数据</center>
+打卡数据
 
 
 
@@ -25,7 +25,7 @@ description: https://group.hellogod.cn 更新日志，常见 FQA
 
 
 
-<center>表格支持排序、分页、搜索</center>
+表格支持排序、分页、搜索
 
 ![img](https://ws2.sinaimg.cn/large/006tNc79gy1g1rn58bdk6j31gk0u04ea.jpg)
 
@@ -33,75 +33,13 @@ description: https://group.hellogod.cn 更新日志，常见 FQA
 
 <!-- more -->
 
-- 不再收录长时间未打卡的用户 
 
-时间：2019-04-03 12:27:49
-
-除名规则： 加入排行榜十天以上，且十天内打卡次数为零。SQL 如下：
-
-```
-UPDATE Member m
-JOIN (
-  SELECT
-    address,
-    checkdays,
-    cnt 
-  FROM
-    (
-    SELECT
-      address,
-      ( cnt - uncheck ) AS checkdays,
-      cnt 
-    FROM
-      ( SELECT address, count( * ) AS cnt, sum( checked ) AS uncheck FROM CheckDayInfo GROUP BY address ORDER BY cnt DESC ) a 
-    WHERE
-      cnt > 10 
-    ) b 
-  WHERE
-    checkdays = 0 
-  ) c 
-  SET m.STATUS = 1 
-WHERE
-  url = c.address
-```
-
-![image-20190405122353852](https://ws2.sinaimg.cn/large/006tNc79gy1g1rn58bdk6j31gk0u04ea.jpg)
-
-
-
-<!-- more -->
 
 - 将长期未打卡的用户除名 
 
 时间：2019-04-03 12:27:49
 
 除名规则： 加入排行榜十天以上，且十天内打卡次数为零。SQL 如下：
-
-```mysql
-UPDATE Member m
-JOIN (
-	SELECT
-		address,
-		checkdays,
-		cnt 
-	FROM
-		(
-		SELECT
-			address,
-			( cnt - uncheck ) AS checkdays,
-			cnt 
-		FROM
-			( SELECT address, count( * ) AS cnt, sum( checked ) AS uncheck FROM CheckDayInfo GROUP BY address ORDER BY cnt DESC ) a 
-		WHERE
-			cnt > 10 
-		) b 
-	WHERE
-		checkdays = 0 
-	) c 
-	SET m.STATUS = 1 
-WHERE
-	url = c.address
-```
 
 
 
@@ -123,7 +61,7 @@ WHERE
 
 
 
-##  2.3 这个项目是如何开发的？
+##  2.3 这个项目是如何开发的？
 
 
 
