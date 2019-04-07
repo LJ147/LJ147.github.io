@@ -11,6 +11,18 @@ categories: 日常
 description: https://group.hellogod.cn 更新日志，常见 FQA
 ---
 
+
+
+如何加入微信群？
+
+因为群超过 100 人，所以可以扫描下面公众号，然后回复 LeetCode，添加我为好友，我来拉你进群(请注明途径+LeetCode拉群)。
+
+![欢迎关注公众号：一时博客](https://ws2.sinaimg.cn/large/006tKfTcgy1g0uf72z7gkj30by0bygmj.jpg)
+
+
+
+
+
 # 1.更新日志
 
 - 添加小组统计数据，新增 datatable 表格(排序、搜索、分页)
@@ -40,6 +52,34 @@ description: https://group.hellogod.cn 更新日志，常见 FQA
 时间：2019-04-03 12:27:49
 
 除名规则： 加入排行榜十天以上，且十天内打卡次数为零。SQL 如下：
+
+```mysql
+UPDATE Member m
+JOIN (
+  SELECT
+    address,
+    checkdays,
+    cnt 
+  FROM
+    (
+    SELECT
+      address,
+      ( cnt - uncheck ) AS checkdays,
+      cnt 
+    FROM
+      ( SELECT address, count( * ) AS cnt, sum( checked ) AS uncheck FROM CheckDayInfo GROUP BY address ORDER BY cnt DESC ) a 
+    WHERE
+      cnt > 10 
+    ) b 
+  WHERE
+    checkdays = 0 
+  ) c 
+  SET m.STATUS = 1 
+WHERE
+  url = c.address
+```
+
+
 
 
 
