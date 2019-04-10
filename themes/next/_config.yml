@@ -711,7 +711,7 @@ vkontakte_api:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: true
-  id:     #<app_id>
+  id:     11976
   color:  fc6423
 # ---------------------------------------------------------------
 

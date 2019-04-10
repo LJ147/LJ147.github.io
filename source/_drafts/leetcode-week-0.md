@@ -51,9 +51,9 @@ So function 0 spends 2 + 1 = 3 units of total time executing, and function 1 spe
 
 
 
-题意：
+题意：求解单 CPU 机器函数运行时间
 
-解题思路：这种问题很自然想到要用栈，然后就是优化空间复杂度。
+解题思路：这种问题很自然想到要用栈，然后就是优化空间复杂度，这里是使用一个 prev 存储。
 
 
 
