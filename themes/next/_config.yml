@@ -84,7 +84,7 @@ footer:
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
@@ -107,13 +107,13 @@ footer:
 creative_commons:
   license: by-nc-sa
   sidebar: false
-  post: false
+  post: true
   language:
 
 # Follow me on GitHub banner in right-top corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/LJ147
   title: Follow me on GitHub
 
 
@@ -346,12 +346,12 @@ reward:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: true
+  enable: false
   title: # custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
-    #PPMixingRate: 0.0
+    # PPMixingRate: 0.0
     #isDate: false
     #isImage: false
     #isExcerpt: false

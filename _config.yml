@@ -6,7 +6,7 @@
 title: 一时博客
 subtitle: 学无止境
 description: 微信公众号：一时博客
-keywords: 机器学习|推荐算法
+keywords: 机器学习|推荐算法|强化学习
 author: 曹真
 language: zh-CN
 timezone:
@@ -91,7 +91,7 @@ deploy:
 
 backup:
     type: git
-    theme: next-6
+    theme: next
     repository:
        github: git@github.com:LJ147/LJ147.github.io.git,backup
 
