@@ -20,7 +20,9 @@ comments: true
 
 
 
-非常欢迎您与我取得联系，无论是交流技术问题或者成为朋友都是很不错的选择。您可以在公众号后台回复 **曹真** 获取我的个人微信。
+为了方便收到评论邮件提醒，便于及时回复，本站采用 **Disqus** 评论插件，加载需要科学上网（可能需要开启全局模型）。非常欢迎您与我取得联系，无论是交流技术问题或者成为朋友都是很不错的选择。您可以在公众号后台回复 **曹真** 获取我的个人微信。
+
+
 
 
 
@@ -56,8 +58,6 @@ comments: true
 - [woods](https://woodsouths.github.io/)
 - [Shuyang Sun, 孙书洋](https://kevin-ssy.github.io/)
 - [DYNASTY](http://blog.varkarix.com/)
-- [罗维-360高级算法工程师](http://vividfree.github.io)
-- [刘建平Pinard 十年码农](https://www.cnblogs.com/pinard)
 - [LYQ'S BLOG](http://www.lyqhahaha.xyz/)
 
 
