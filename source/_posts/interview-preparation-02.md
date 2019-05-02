@@ -29,9 +29,9 @@ keyword:
 
 
 
-# 深度学习
+# 1.深度学习
 
-## 激活函数
+## 1.1 激活函数
 
 - 激活函数总览
 ![](https://ws3.sinaimg.cn/large/0069RVTdly1fux1vg7sycj31b30n9q8z.jpg)
@@ -50,7 +50,7 @@ keyword:
 - Maxout  
 ![](https://ws2.sinaimg.cn/large/0069RVTdly1fux22anaivj31ab0m5tfp.jpg)
 
-## Batch Normalization
+## 1.2 Batch Normalization
 
 
 
@@ -75,17 +75,17 @@ out = self.gamma * X_normed + self.beta#重构变换
 
 paper：[Batch Normalization: Accelerating Deep Network Training by  Reducing Internal Covariate Shift](https://arxiv.org/pdf/1502.03167.pdf)
 
-## 调参
+## 1.3 调参
 - Grid Search
 
 ![](https://ws3.sinaimg.cn/large/0069RVTdly1fux2sjw2ecj315q0l0dpc.jpg) 
 
-## 池化与反池化、卷积与反卷积
+## 1.4 池化与反池化、卷积与反卷积
 
 ![](https://ws2.sinaimg.cn/large/006tNbRwly1fuulgxf70xj314w0v6q9j.jpg)
 
 
-## CNN参数、连接和输出计算
+## 1.5 CNN参数、连接和输出计算
 
 - 卷积层
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fuv8axu284j30mq0bc40b.jpg)
@@ -102,7 +102,7 @@ paper：[Batch Normalization: Accelerating Deep Network Training by  Reducing In
 
 ![](https://ws3.sinaimg.cn/large/0069RVTdly1fuwwcatjhmj30oc0g2ae8.jpg)
 
-##  1*1 卷积核的作用？
+##  1.6 1*1 卷积核的作用？
 
 1、降维（ dimension reductionality ）。比如，一张500 * 500且厚度depth为100 的图片在20个filter上做1 * 1 的卷积，那么结果的大小为500*500*20。
 
@@ -111,7 +111,7 @@ paper：[Batch Normalization: Accelerating Deep Network Training by  Reducing In
 
 
 
-## 激活函数概述
+## 1.7 激活函数
 
 
 神经网络中激活函数的主要作用是提供网络的非线性建模能力，如不特别说明，激活函数一般而言是非线性函数。假设一个示例神经网络中仅包含线性卷积和全连接运算，那么该网络仅能够表达线性映射，即便增加网络的深度也依旧还是线性映射，难以有效建模实际环境中非线性分布的数据。加入（非线性）激活函数之后，深度神经网络才具备了分层的非线性映射学习能力。因此，激活函数是深度神经网络中不可或缺的部分。
@@ -155,15 +155,15 @@ softmax建模使用的分布是多项式分布，而logistic则基于伯努利�
 多个logistic回归通过叠加也同样可以实现多分类的效果，但是 softmax回归进行的多分类，类与类之间是互斥的，即一个输入只能被归为一类；多个logistic回归进行多分类，输出的类别并不是互斥的，即"苹果"这个词语既属于"水果"类也属于"3C"类别。
 
 
-# 机器学习
+# 2.机器学习
 
-##  逻辑回归
+##  2.1 逻辑回归
 
 - 逻辑回归损失函数推导
 
 ![](https://ws3.sinaimg.cn/large/0069RVTdly1fuwthqi5aej30ht0i7go9.jpg)
 
-## 机器学习基础
+## 2.2 机器学习基础
 
 - 模型评估指标
 
@@ -188,7 +188,7 @@ F1 Score = P*R/2(P+R)
 
 
 
-## 随机森林、GBDT和XGBoost
+## 2.3 随机森林、GBDT 和 XGBoost
 
 - GBDT和XGBoost的区别？
 
@@ -272,17 +272,17 @@ xgboost在实现时还做了许多优化：
 - 样本比例不均衡？
 
  1.过抽样（over-sampling）和欠抽样（under-sampling）：前者一般指简单复制少数类样本形成多条记录，缺点是容易过拟合，改进方案是：加入随机噪声、干扰数据或通过一定规则产生新的合成样本；随机减少多数类样本，缺点是丢失部分重要信息，学习的到不能代表大盘。
- 
+
 因为下采样会丢失信息，如何减少信息的损失呢？第一种方法叫做**EasyEnsemble**，利用模型融合的方法（Ensemble）：多次下采样（放回采样，这样产生的训练集才相互独立）产生多个不同的训练集，进而训练多个不同的分类器，通过组合多个分类器的结果得到最终的结果。第二种方法叫做BalanceCascade，利用**增量训练**的思想（Boosting）：先通过一次下采样产生训练集，训练一个分类器，对于那些分类正确的大众样本不放回，然后对这个更小的大众样本下采样产生训练集，训练第二个分类器，以此类推，最终组合所有分类器的结果得到最终结果。第三种方法是利用**KNN**试图挑选那些最具代表性的大众样本，叫做NearMiss，这类方法计算量很大，感兴趣的可以参考“Learning from Imbalanced Data”这篇综述的3.2.1节。
- 
+
 2.通过对正负样本分别加权，基于类别数量的加权处理。
 3.数据合成
 4.一分类（One Class Learning）、异常检测（Novelty Detection）     
     
-## 特征选择的方案
+## 2.4 特征选择
 
 
-## 优化算法
+## 2.5 优化算法
 
 梯度下降，牛顿法与拟牛顿法
 ![](https://ws2.sinaimg.cn/large/006tNbRwgy1fu4grkvaxrj313k0q0gp2.jpg)
@@ -298,17 +298,15 @@ xgboost在实现时还做了许多优化：
 
 ![](https://ws3.sinaimg.cn/large/006tNbRwgy1fu4jeyveq4j31e412mnak.jpg)
 
-# NLP
+# 3.NLP
 
 ## Word2vec
 
 2013 年，Google 团队发表了 word2vec 工具 。word2vec 工具主要包含两个模型：跳字模型（skip-gram）和连续词袋模型（continuous bag of words，简称 CBOW），以及两种   近似训练法：负采样（negative sampling）和层序 softmax（hierarchical softmax）。值得一提的是，word2vec 的词向量可以较好地表达不同词之间的相似和类比关系。
 
-
-
  - 为什么传统的one-hot不适用？
 
-# 参考
+# 4.参考
 
 
 1. [知乎：如何解释召回率与准确率？](https://www.zhihu.com/question/19645541)

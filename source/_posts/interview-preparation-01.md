@@ -23,10 +23,10 @@ keyword:
 
 
 
-#  机器学习
+#  1.机器学习
 
 
-## 损失函数
+## 1.1 损失函数
 
 - 线性回归损失函数？LR的损失函数？线性回归损失函数的两种损失函数的比较？最大似然在逻辑回归当中的应用？梯度下降在逻辑回归中的应用？
 
@@ -34,7 +34,7 @@ keyword:
 
 对于第一项Loss函数，如果是Square loss，那就是最小二乘了；如果是Hinge Loss，那就是著名的SVM了；如果是exp-Loss，那就是牛逼的 Boosting了；如果是log-Loss，那就是Logistic Regression了。
 
-###  回归损失函数
+###  1.1.1 回归损失函数
 
 对于二分类问题，![](https://ws2.sinaimg.cn/large/006tNbRwly1fuvpg4l95uj306002gdfq.jpg) ，损失函数常表示为关于 yf(x) 的单调递减形式。
 
@@ -44,7 +44,7 @@ yf(x) 被称为margin，其作用类似于回归问题中的残差 y-f(x) 。
 
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fuvpayhll9j316q0jctaw.jpg)
 
-### 分类损失函数
+### 1.1.2 分类损失函数
 
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fuvphqgte0j31800fy77n.jpg)
 
@@ -67,7 +67,7 @@ sigmod函数
 - [机器学习-损失函数](http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/)
 - [常见回归和分类损失函数比较](https://zhuanlan.zhihu.com/p/36431289)
 
-## 树类模型
+## 1.2 树类模型
 
 过拟合问题？ OOB？
 
@@ -113,7 +113,7 @@ REP是最简单的后剪枝方法之一，不过由于使用独立的测试集�
 
 
 
-# Topic Model
+# 2.Topic Model
 
 
 - LDA解释一下？推导公式？ LDA主题个数如何确定？
@@ -163,7 +163,7 @@ Boosting：各个预测函数只能顺序生成，因为后一个模型参数需
 - 分类问题有哪些评价指标？每种的适用场景。
 
  https://blog.csdn.net/PacosonSWJTU/article/details/58651726
- 
+
 - 讲一下正则化，L1和L2正则化各自的特点和适用场景。
 
 http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/
@@ -235,7 +235,7 @@ LR采用的是log loss，svm则是hinge loss
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1ftfa3l3ws6j30p60g2gna.jpg)
 
-#  深度学习
+#  3.深度学习
 
 
 - 手推BP
@@ -295,20 +295,20 @@ LR采用的是log loss，svm则是hinge loss
 主要用于降维，减少参数个数，做特征变换，以及增加宽度。
 
 
-#  科研上的开放性问题
+#  4.科研上的开放性问题
 
 - 选一个计算机视觉、深度学习、机器学习的子领域，讲一下这个领域的发展脉络，重点讲出各种新方法提出时的motivation，以及谈谈这个领域以后会怎么发展。
 -  讲一下你最近看的印象比较深的paper
 - 讲一下经典的几种网络结构， AlexNet， VGG，GoogleNet， Residual Net等等，它们各自最重要的contribution
 -  你看过最近很火的XXX paper吗? 你对这个有什么看法？ 
 
-# 编程
+# 5.编程
 
 - hashmap的实现、hashtable
-- 说一下快排？ 时间复杂度nlogn怎么来的
+- 说一下快排？ 时间复杂度 nlogn 怎么来的
 
 
-# 大数据相关
+# 6.大数据相关
 
 - spark 任务调度 job、stage、task划分
 ![](https://ws4.sinaimg.cn/large/801b780agy1ftt5mhiievj218a0ikaco.jpg)
@@ -321,7 +321,7 @@ LR采用的是log loss，svm则是hinge loss
 ![](https://ws2.sinaimg.cn/large/801b780agy1ftt5n3bn11j216k0gsdi0.jpg)
 
 
-#  数学题
+#  7.数学题
 
 - 如果一个女生说她集齐了十二个星座的前男友，她前男友数量的期望是多少？
 - 两个人玩游戏。有n堆石头，每堆分别有a1, a2, a3.... an个石头，每次一个游戏者可以从任意一堆石头里拿走至少一个石头，也可以整堆拿走，
@@ -332,7 +332,7 @@ LR采用的是log loss，svm则是hinge loss
 - 讲一下你理解的特征值和特征向量。
 - 为什么负梯度方向是使函数值下降最快的方向？简单数学推导一下
 
-# 参考
+# 8.参考
 
 - [第05章：深入浅出ML之Bayes-Based家族](http://www.52caml.com/head_first_ml/ml-chapter5-bayes-based-family/)
 - [概率论6大分布](https://blog.csdn.net/cc1949/article/details/78906044)
