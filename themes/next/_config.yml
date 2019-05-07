@@ -665,9 +665,9 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-# google_analytics:
-#   tracking_id: UA-96527706-1
-#   localhost_ignored: false
+google_analytics:
+  tracking_id: UA-96527706-1
+  localhost_ignored: false
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
