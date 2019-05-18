@@ -56,7 +56,6 @@ comments: true
 - [许宜森的个人博客](https://daixinyuxuyisen.cn/)
 - [黄思腾：大黄菌的个人博客](http://kyonhuang.top/)
 - [姚文卿：文卿的藏剑山庄](http://yaowenqing.com/)
-- [操润楠：woods](https://woodsouths.github.io/)
 - [孙书洋：Shuyang Sun](https://kevin-ssy.github.io/)
 - [崔一凡：DYNASTY](http://blog.varkarix.com/)
 - [刘永强：LYQ'S BLOG](http://www.lyqhahaha.xyz/)
