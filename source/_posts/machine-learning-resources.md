@@ -26,20 +26,24 @@ description: 自己的学习经历
 
 # 二、入门资料
 
-很多人都会推荐资料，我看到的时候也会收藏，但往往也止于收藏。下面的推荐大多经过了检验，绝对值得你花时间仔细琢磨。
+很多人都会推荐资料，我看到的时候也会收藏，但往往也止于收藏。下面的推荐大绝对值得你花时间仔细琢磨。
 
 而且，要注意的是，你在一开始看的时候，要学会"不求甚解"，一开始的时候，有些地方弄不明白，并不是你笨或者老师讲得不好，单纯是知识体系不够完善，所以理解起来有困难。对于初学者，信心和坚持最重要。
 
 还有一点要提前打预防针，有很多很多看起来异常炫酷的算法和 paper，但是往往工作中不会用到，机器学习是为了解决问题，不是为了应用特定算法，所以不要觉得什么都要用机器学习方法，如果传统方式能解决自然更好。
 
+在初始阶段，我们会参考一下博客之类的内容，但一定要加以区分，不要反被有些错误的地方误导。
+
 ## 2.1 在线课程
 
-初期可能觉得书本难啃，可以先从视频教程入手，自己当初走了弯路，光顾着看视频，课后作业没仔细做，建议仔细完成课后作业，收获会更大。
+初期可能觉得书本难啃，可以先从视频教程入手，自己当初走了弯路，光顾着看视频，课后作业没仔细做，建议仔细完成课后作业，收获会更大。下面的课程，后两个没有看过，暂时躺在 to-do list 中。
 
 - [deeplearning.ai](https://mooc.study.163.com/smartSpec/detail/1001319001.htm) 吴恩达 
 - [CS229: Machine Learning](http://cs229.stanford.edu) 斯坦福
-- [CS231n](http://cs231n.stanford.edu/) 李飞飞 
-- [动手学深度学习](https://zh.gluon.ai) 李沐团队，基于MXNet
+- [CS231n:Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/) 斯坦福 
+- [动手学深度学习](https://zh.gluon.ai) 伯克利
+- [CS224d: Deep Learning for Natural Language Processing ](http://cs224d.stanford.edu/) 斯坦福
+- [Stat212b：Topics Course on Deep Learning](http://joanbruna.github.io/stat212b/) 伯克利
 
 ## 2.2 书籍
 
@@ -52,11 +56,7 @@ description: 自己的学习经历
 - [《深度学习》](https://book.douban.com/subject/27087503/) 
 - [《神经网络与深度学习》](https://nndl.github.io) 邱锡鹏
 
-
-
-
-
 ## 2.3 面试准备
 
 - [《百面机器学习》](https://book.douban.com/subject/30285146/) hulu 坦白讲这本书很多内容似乎与网上的内容相似度很高，但如果当做是面试合集，也不错
-- 关注牛客网、知乎等用户发布的机器学习相关面经，功利一些讲，这个是对面试最有帮助的
+- 关注牛客网、知乎等用户发布的机器学习相关面经，从功利的角度讲，刷面试题对面试的直接效果最佳
