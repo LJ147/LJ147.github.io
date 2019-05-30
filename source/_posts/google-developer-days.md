@@ -10,7 +10,7 @@ description:
 keyword:
 ---
 
-![图片发自简书App](https://ws1.sinaimg.cn/large/006tKfTcly1fs3v0sav6qj30sg0sggu2.jpg)
+
 
 <!-- more -->
 
@@ -40,7 +40,6 @@ keyword:
 ![图片发自简书App](https://ws2.sinaimg.cn/large/006tKfTcly1fs3v12mbafj31kw16o4ej.jpg)
 
 
-![图片发自简书App](https://ws1.sinaimg.cn/large/006tKfTcly1fs3v14qc84g30af0dwb2d.gif)
 ![图片发自简书App](https://ws2.sinaimg.cn/large/006tKfTcly1fs3v16e8jnj31kw23vhdt.jpg)
 
 ![图片发自简书App](https://ws3.sinaimg.cn/large/006tKfTcly1fs3v17trkwj31kw23ve81.jpg)
@@ -55,7 +54,7 @@ keyword:
 
 ![图片发自简书App](https://ws4.sinaimg.cn/large/006tKfTcly1fs3v1msdbkj31kw16o7rt.jpg)
 
-![图片发自简书App](https://ws2.sinaimg.cn/large/006tKfTcly1fs3v1p5qzvj31kw23vqv5.jpg)
+
 
 
 感谢武汉GDG的赞助
