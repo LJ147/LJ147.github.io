@@ -199,8 +199,10 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/LJ147 || github
+  # GitHub: https://github.com/LJ147 || github
   zhihu: https://www.zhihu.com/people/caozhen233 || book
+  linkedin: https://www.linkedin.com/in/%E7%9C%9F-%E6%9B%B9-985694141/ || linkedin
+
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
@@ -217,6 +219,8 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
+  Linkedin: linkedin
+
 
 # Blog rolls
 links_icon: link
@@ -766,7 +770,7 @@ busuanzi_count:
 #tencent_mta:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: true
+baidu_push: false
 
 # Google Calendar
 # Share your recent schedule to others via calendar page.
