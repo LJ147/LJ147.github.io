@@ -7,7 +7,7 @@ tags:
 categories: 开发笔记
 date: 2017-09-17 01:15:00
 updated: 2019-06-16 09:38:53
-description: 这里介绍的软件并非 macOS 专有，小技巧有些已经广为人知
+description: 
 ---
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fs3v2tuvzqj31g70th7ar.jpg)
@@ -21,7 +21,7 @@ description: 这里介绍的软件并非 macOS 专有，小技巧有些已经广
 
 - Qbserve：记录软件使用频率
 
-  ![image-20190616100253147](http://ww4.sinaimg.cn/large/006tNc79gy1g42rp479fqj317p0u043a.jpg)
+  ![image-20190616100253147](http://ww4.sinaimg.cn/large/006tNc79gy1g42s8x1a94j317p0u0q6r.jpg)
 
 - 番茄土豆：番茄工作法
 
@@ -62,4 +62,3 @@ description: 这里介绍的软件并非 macOS 专有，小技巧有些已经广
 
 
 // TODO 补充更多 macOS 使用技巧
-
