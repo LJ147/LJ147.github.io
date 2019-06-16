@@ -21,7 +21,7 @@ description:
 
 - Qbserve：记录软件使用频率
 
-  ![image-20190616100253147](http://ww4.sinaimg.cn/large/006tNc79gy1g42s8x1a94j317p0u0q6r.jpg)
+  ![image-20190616102832993](http://ww2.sinaimg.cn/large/006tNc79gy1g42sfckc0nj317p0u0aer.jpg)
 
 - 番茄土豆：番茄工作法
 
