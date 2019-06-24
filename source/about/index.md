@@ -16,13 +16,9 @@ comments: true
 
 
 
-欢迎您关注我的个人微信公众号：**一时博客**，我觉得写的比较满意的文章会在公众号中推送，拒绝扰民。
-
-
+欢迎您关注我的个人微信公众号：**一时博客**，部分文章会在公众号中推送。
 
 本站采用 **Disqus** 评论插件，加载需要科学上网（可能需要开启全局模式）。非常欢迎您与我取得联系，无论是交流技术问题或者成为朋友都是很不错的选择。您可以在公众号后台回复 **曹真** 添加我的个人微信（请注明姓名）。
-
-
 
 个人邮箱：caozhen.ai@qq.com
 
@@ -30,15 +26,11 @@ comments: true
 
 # 2. 背景
 
-
-
 ##  学历
 
 | 时间| 学校| 学院       | 专业     |学历 |
 | --- |--- |---| ---| --- |
 | 2015.9 - 2019.6 | 武汉大学|计算机学院| 软件工程 |本科 |
-
-
 
 ## 工作经历
 
@@ -47,8 +39,6 @@ comments: true
 | 2019.7 -       | 拼多多 | 上海 | 算法工程师 | 推荐系统 |
 | 2018.7 - 2018.9 | 腾讯 WXG | 深圳 | 应用研究实习生 | 推荐、广告 |
 | 2018.3 - 2018.6 | 字节跳动 | 北京 | 数据挖掘实习生 | 复杂网络 |
-
-
 
 # 3. 友链
 
@@ -61,15 +51,17 @@ comments: true
 - [刘永强：LYQ'S BLOG](http://www.lyqhahaha.xyz/)
 - [周明贤：MX Blog](https://xiaoxinganling.github.io/)
 
-
-
 #  4. 博客构建
-
-
 
 本博客基于 [Hexo](hexo.io) 的 [Next](https://github.com/iissnan/hexo-theme-next) 主题搭建，托管于 [GitHub Pages](https://pages.github.com) ，博客logo来自 [iconfont](http://www.iconfont.cn/collections/detail?cid=8530)。博客的 Github repo 地址为： [LJ147.github.io](https://github.com/LJ147/LJ147.github.io) 。
 
+选择自己搭建博客且托管到 Github 的主要目的：
 
+1.自主，自己对于博客的样式、内容具有较高的自主性，相比公众号，可以很方便的进行后期更正、修改；
+
+2.无广告：没有很多博客网站原始自带的乱七八糟的广告；
+
+3.相比自建服务器，托管式博客会省去很多麻烦。
 
 
 

@@ -5,7 +5,7 @@ tags:
   - 回忆
   - 学习
   - 方法论
-categories: 散文
+categories: 学习计划
 date: 2018-12-26 00:46:14
 updated: 2018-12-27 02:45:14
 description: 总是有人对我们说“加油”，“油”从哪里来呢？

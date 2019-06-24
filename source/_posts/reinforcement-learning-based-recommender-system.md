@@ -4,7 +4,7 @@ tags:
   - 综述
   - 强化学习
   - 推荐系统
-categories: 推荐系统
+categories: 工作
 date: 2019-01-10 17:13:38
 updated: 2019-01-10 17:13:38
 description: 增强学习在推荐系统上的应用

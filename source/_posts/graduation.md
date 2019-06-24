@@ -5,7 +5,7 @@ tags:
   - 毕业
 date: 2019-06-23 00:09:12
 updated: 2019-06-23 00:09:12
-categories: 日常
+categories: 大学总结
 description: 四年转瞬即逝，转眼我已经毕业即将走向社会。
 ---
 

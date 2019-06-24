@@ -5,7 +5,7 @@ tags:
   - 方法论
   - 面试
   - 分享
-categories: 方法论
+categories: 学习计划
 date: 2018-10-24 00:38:08
 updated: 2019-01-04 22:51:12
 description: 对学习方法的思考
