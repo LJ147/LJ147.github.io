@@ -2,7 +2,7 @@
 title: python爬虫基础-01
 tags:
   - 爬虫
-categories: 学科笔记
+categories: 学科
 date: 2018-01-24 04:11:44
 updated: 2018-01-24 04:11:44
 description: 爬虫的一些简单总结
