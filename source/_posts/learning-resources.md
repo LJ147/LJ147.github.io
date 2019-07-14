@@ -22,7 +22,7 @@ description: 一些看过的好文章、资料
 
 # 2.深度学习
 
-#  
+- [深度学习在美团搜索广告排序的应用实践](https://tech.meituan.com/2018/06/07/searchads-dnn.html)
 
 # 3.推荐系统
 
