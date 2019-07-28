@@ -39,6 +39,7 @@ description: 一些看过的好文章、资料
 
 - [前百度总裁陆奇：我给有梦想的年轻人10点建议](https://mp.weixin.qq.com/s/kwrAxkDb5IHnCRsz-s75NA)
 - [给产品技术人才的建议：不降级不投机，和优秀的人做有挑战的事](https://www.linkedin.com/pulse/%E7%BB%99%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E4%BA%BA%E6%89%8D%E7%9A%84%E5%BB%BA%E8%AE%AE%E4%B8%8D%E9%99%8D%E7%BA%A7%E4%B8%8D%E6%8A%95%E6%9C%BA%E5%92%8C%E4%BC%98%E7%A7%80%E7%9A%84%E4%BA%BA%E5%81%9A%E6%9C%89%E6%8C%91%E6%88%98%E7%9A%84%E4%BA%8B-yiming-zhang/)
+- [机器学习科研的十年](https://zhuanlan.zhihu.com/p/74249758)
 
 # 6.资源推荐
 

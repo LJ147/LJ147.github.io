@@ -1,12 +1,12 @@
 ---
-title: 开发常用工具备忘录
+title: 开发常用工具备忘录（持续更新）
 tags:
   - 工具
   - 笔记
   - 开发
 categories: 开发笔记
 date: 2018-06-13 10:36:02
-updated: 2018-06-13 10:36:02
+updated: 2019-07-28 22:02:42
 description: 好记性不如烂笔头
 keyword: 
 ---
@@ -16,7 +16,7 @@ keyword:
 
 <!-- more -->
 
-# 本机ssh免密登录远程linux服务器
+# 1.本机ssh免密登录远程linux服务器
 
 如果本地之前未生成过密钥，执行 `ssh-keygen -t rsa` ，如果已经生成，则不无需执行该步骤。
 
@@ -31,7 +31,7 @@ keyword:
 
 
 
-# IntelliJ IDEA快捷键
+# 2.IntelliJ IDEA快捷键
 
 
 - 创建main函数（首字母缩写）：  psvm 
@@ -47,11 +47,18 @@ keyword:
 ![](https://ws4.sinaimg.cn/large/006tNbRwgy1fu400qhcsqj30qq070dh0.jpg)
 > sout 
 
-# 国外源换国内源
- 
+| 快捷键      | 说明             |
+| ----------- | ---------------- |
+| Command+B   | 跳转到实现       |
+| Command + U | 跳转到上层方法   |
+| Command + [ | 回到刚刚的位置   |
+| Ctrl + H    | 查看接口的实现类 |
+
+# 3.国外源换国内源
+
 因为网络环境的问题，很多国外的开发资源拉取很慢，所以需要换到国内加快速度。
 
-## pip更换国内源
+## 4.pip更换国内源
 
 永久修改，一劳永逸：
 
@@ -76,22 +83,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
-
-## conda更换国内源
-
-TUNA 还提供了 Anaconda 仓库的镜像，运行以下命令:
-
-```
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-conda config --set show_channel_urls yes
-```
-即可添加 Anaconda Python 免费仓库。
-
-运行 conda install numpy 测试一下吧。
-
-
-## homebrew更换国内源
+## 5.homebrew更换国内源
 
 替换现有上游
 
@@ -106,6 +98,14 @@ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/home
 
 brew update
 ```
+
+# 6.vscode-json
+
+
+
+vscode-json插件，应用市场可搜，美化、校验，方便又安全。
+
+
 
 # 参考链接
 

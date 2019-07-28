@@ -84,12 +84,6 @@ myList
 - Provide production-ready features such as metrics, health checks and externalized configuration
 - Absolutely no code generation and no requirement for XML configuration
 
-## 3.2 如何做到以上几点？
-
-
-
-## 3.3 Spring 简单介绍
-
 
 
 # 参考
