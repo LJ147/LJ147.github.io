@@ -42,8 +42,6 @@ keyword:
 
 - 输出语句： System.out.println()
 
-
-
 ![](https://ws4.sinaimg.cn/large/006tNbRwgy1fu400qhcsqj30qq070dh0.jpg)
 > sout 
 
