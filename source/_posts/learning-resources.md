@@ -16,19 +16,19 @@ description: 一些看过的好文章、资料
 
 <!-- more -->
 
-# 1.机器学习
+# 1.大数据
 
+- [Hive SQL的编译过程](https://tech.meituan.com/2014/02/12/hive-sql-to-mapreduce.html)
 
-
-# 2.深度学习
+# 2.机器/深度学习
 
 - [深度学习在美团搜索广告排序的应用实践](https://tech.meituan.com/2018/06/07/searchads-dnn.html)
 
 # 3.推荐系统
 
 - [阿里零售通智能导购推荐技术实践](https://mp.weixin.qq.com/s/QsKCIPIJFuM3RLl0u9Q6JQ)﻿﻿
-
 - [淘宝提出用户实时意图预测算法DIPN，效果秒杀传统模型](https://mp.weixin.qq.com/s/qoxEidhZAlY9R0T3y3nP6Q)
+- [深入FFM原理与实践](https://tech.meituan.com/2016/03/03/deep-understanding-of-ffm-principles-and-practices.html)
 
 # 4.工程相关
 
