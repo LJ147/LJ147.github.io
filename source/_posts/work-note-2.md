@@ -1,13 +1,14 @@
 ---
-title: 工作笔记（2）
+title: 推荐系统工作笔记（2）
 tags:
   - 工作
   - 笔记
   - 推荐算法
+  - 计算广告
 date: 2019-08-18 02:29:29
 updated: 2019-08-18 02:29:29
 categories: 工作
-description: 第二篇工作笔记，夹杂一些干货
+description: 第二篇工作笔记，一些想法和业务中遇到的实际问题
 ---
 
 
@@ -71,6 +72,9 @@ pcopc：预估准度PCOPC(Predict Click Over Post Click)
 
 - 训练和测试集
 - DNN中特征重要性如何衡量
+- 如何阅读报表？
+
+抓住关键指标，理解指标含义，理解指标为何变化。
 
 
 
