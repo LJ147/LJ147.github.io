@@ -16,7 +16,7 @@ description: 调试、快捷键
 
 之前写 Java 多数起在本地，有报错直接点进去看就好，有时候服务起在远程，只能从 log 里找错误，这时候只需要把报错贴到这里，就可以自动定位到错误的地方，很方便。
 
-![image-20190801191518217](http://ww3.sinaimg.cn/large/006tNc79ly1g5ke5q8qtwj30hk0j7js9.jpg)
+![image-20190801191518217](https://ww2.sinaimg.cn/large/006y8mN6ly1g68ot6pqyvj30hk0j7mxw.jpg)
 
 # 2.一些细节
 
