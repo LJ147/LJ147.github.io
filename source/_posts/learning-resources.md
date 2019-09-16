@@ -5,7 +5,7 @@ tags:
   - 未完待续
   - 资料
 date: 2019-07-11 11:54:23
-updated: 2019-07-11 11:54:23
+updated: 2019-09-16 17:26:32
 categories: 工作
 description: 一些看过的好文章、资料
 ---
@@ -29,6 +29,7 @@ description: 一些看过的好文章、资料
 - [阿里零售通智能导购推荐技术实践](https://mp.weixin.qq.com/s/QsKCIPIJFuM3RLl0u9Q6JQ)﻿﻿
 - [淘宝提出用户实时意图预测算法DIPN，效果秒杀传统模型](https://mp.weixin.qq.com/s/qoxEidhZAlY9R0T3y3nP6Q)
 - [深入FFM原理与实践](https://tech.meituan.com/2016/03/03/deep-understanding-of-ffm-principles-and-practices.html)
+- [阿里妈妈新突破：深度树匹配如何扛住千万级推荐系统压力](https://www.infoq.cn/article/y95dtkfr2_lhBus40Ksi)
 
 # 4.工程相关
 
