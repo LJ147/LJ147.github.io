@@ -37,13 +37,13 @@ description: 作为果粉的一篇体验文，不求专业，只讲体验，总�
 
 <center>EI Caption 壁纸</center>
 
-![p2568496177](/Users/Alison/Downloads/p2568496177.jpg)
+![p2568496177](https://tva1.sinaimg.cn/large/006y8mN6gy1g78tho5qhwj31hc0ssq99.jpg)
 
 <center>电影剧照</center>
 
 
 
-![p2568496535](/Users/Alison/Downloads/p2568496535.jpg)
+![p2568496535](https://tva1.sinaimg.cn/large/006y8mN6gy1g78thruhc5j31hc0ss11t.jpg)
 
 <center>电影剧照</center>
 
@@ -121,7 +121,7 @@ iPadOS 会在 9 月 25 号推送。
 
 <img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g77y9xj3oaj30ku112jte.jpg" alt="IMG_3465" style="zoom:50%;" />
 
-<img src="/Users/Alison/Downloads/IMG_3500.PNG" alt="IMG_3500" style="zoom:33%;" />
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g78thtb3aoj30u01szdjm.jpg" alt="IMG_3500" style="zoom:33%;" />
 
 ## 3.照片编辑
 
@@ -155,19 +155,19 @@ iPadOS 会在 9 月 25 号推送。
 
 ## 3.夜景
 
-这个真的要吹一波，有点超出想象，虽然不知道怎么做到的。下班之后随手怕了几张照片，如下：
+这个真的要吹一波，有点超出想象，虽然不知道怎么做到的。下班之后随手拍了几张照片，如下：
 
 图一是公司楼下，貌似能看到两颗星星。
 
-![image-20190923011944058](/Users/Alison/Library/Application Support/typora-user-images/image-20190923011944058.png)
+![image-20190923011944058](https://tva1.sinaimg.cn/large/006y8mN6gy1g78thscs5kj30u0140jxb.jpg)
 
 
 
-![image-20190923011933510](/Users/Alison/Library/Application Support/typora-user-images/image-20190923011933510.png)
+![image-20190923011933510](https://tva1.sinaimg.cn/large/006y8mN6gy1g78thpd21qj31400u0gsa.jpg)
 
 等绿灯的时候拍的一张照片
 
-![IMG_3491](/Users/Alison/Downloads/IMG_3491.jpg)
+![IMG_3491](https://tva1.sinaimg.cn/large/006y8mN6gy1g78thr3bj6j30u0140npe.jpg)
 
 # 4.参考
 
