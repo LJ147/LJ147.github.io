@@ -50,6 +50,7 @@ comments: true
 - [崔一凡：DYNASTY](http://blog.varkarix.com/)
 - [刘永强：LYQ'S BLOG](http://www.lyqhahaha.xyz/)
 - [周明贤：MX Blog](https://xiaoxinganling.github.io/)
+- [XIAOQIAN ZHANG](http://whuzxq.com/)
 
 #  4. 博客构建
 
