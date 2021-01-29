@@ -1,0 +1,3458 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta name="referrer" content="no-referrer">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png?v=7.0.1">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="微信公众号：一时博客">
+<meta name="keywords" content="机器学习|推荐算法|强化学习|深度学习｜广告算法">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一时博客">
+<meta property="og:url" content="https://hellogod.cn/page/11/index.html">
+<meta property="og:site_name" content="一时博客">
+<meta property="og:description" content="微信公众号：一时博客">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一时博客">
+<meta name="twitter:description" content="微信公众号：一时博客">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一时博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://hellogod.cn/page/11/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>一时博客</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-96527706-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !false) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-96527706-1');
+    }
+  </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0bed23c03bfeb07d49563f032c53d63";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一时博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">学无止境</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">192</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">32</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">118</span></a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/LJ147" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-09-20/csapp-notes-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-09-20/csapp-notes-0/" class="post-title-link" itemprop="url">CSAPP课程学习笔记-0</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-20 19:29:05" itemprop="dateCreated datePublished" datetime="2017-09-20T19:29:05+08:00">2017-09-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-09-27 01:34:36" itemprop="dateModified" datetime="2017-09-27T01:34:36+08:00">2017-09-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学科笔记/" itemprop="url" rel="index"><span itemprop="name">学科笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>待更新</p>
+<h1 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h1><p>引用一个<a href="https://www.zhihu.com/question/20402534/answer/223555103" target="_blank" rel="noopener">知乎回答</a>：</p>
+<p> 学习这门课我觉得收获最大是写lab。这门课一共有6个lab。<br>分别是：</p>
+<ul>
+<li>Data Lab：bit 运算与float的相关操作</li>
+<li>Bomb Lab：阅读汇编破解密码</li>
+<li>Attack Lab：Buffer Overflow 攻击</li>
+<li>Cache Lab：实现一个cache simulator已经一个cache efficient的矩阵转置。</li>
+<li>Shell Lab：用多进程实现一个简单的linux shell。主要是熟悉进程控制与同步。</li>
+<li>Malloc Lab：自己写一个C语言的malloc函数。</li>
+<li>Proxy Lab：写一个支持HTML的多线程Server。熟悉Unix网络编程与多线程的控制与同步。</li>
+</ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-09-20/csapp-notes-0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-09-20/hexo-optimization-records/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-09-20/hexo-optimization-records/" class="post-title-link" itemprop="url">hexo hexo + next主题深度优化</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-20 04:38:02" itemprop="dateCreated datePublished" datetime="2017-09-20T04:38:02+08:00">2017-09-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">hexo + next主题深度优化</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="优化页面加载速度"><a href="#优化页面加载速度" class="headerlink" title="优化页面加载速度"></a>优化页面加载速度</h1><p>Chrome 开发者工具，查看页面加载速度，找到耗时最多的部分并想办法进行调整。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3v0fyx6ng30bn06aqv7.gif" alt="QQ20170920-072301.gif"></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-09-20/hexo-optimization-records/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-09-17/macOS-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-09-17/macOS-tips/" class="post-title-link" itemprop="url">macOS上的好用软件和使用Tips</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-17 01:15:00" itemprop="dateCreated datePublished" datetime="2017-09-17T01:15:00+08:00">2017-09-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-16 09:38:53" itemprop="dateModified" datetime="2019-06-16T09:38:53+08:00">2019-06-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v2tuvzqj31g70th7ar.jpg" alt><br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-09-17/macOS-tips/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-09-04/new-term-new-goals/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-09-04/new-term-new-goals/" class="post-title-link" itemprop="url">新学期的目标和计划</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-04 03:33:44" itemprop="dateCreated datePublished" datetime="2017-09-04T03:33:44+08:00">2017-09-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-20 17:10:11" itemprop="dateModified" datetime="2018-06-20T17:10:11+08:00">2018-06-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习计划/" itemprop="url" rel="index"><span itemprop="name">学习计划</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">新学期的一些计划，又称flag</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>新学期的目标和计划</p>
+<h1 id="目标-amp-计划"><a href="#目标-amp-计划" class="headerlink" title="目标 &amp; 计划"></a>目标 &amp; 计划</h1><ul>
+<li style="list-style: none"><input type="checkbox"> 深度学习、CV 方便有一个能拿的出手的项目</li>
+<li style="list-style: none"><input type="checkbox"> 争取发一篇 paper(捂脸🤦‍♀️)</li>
+<li style="list-style: none"><input type="checkbox" checked> 数据结构和算法再认真刷一刷</li>
+<li style="list-style: none"><input type="checkbox" checked> 经常更新博客、Github 上保持 push</li>
+<li style="list-style: none"><input type="checkbox" checked> 遇到好的想法就立即去实现！</li>
+<li style="list-style: none"><input type="checkbox"> 试着提高专业课到课率</li>
+<li style="list-style: none"><input type="checkbox" checked> 和以前一样，骑着车去听一听有趣的课，去别的学校转一转</li>
+<li style="list-style: none"><input type="checkbox" checked> 攒一点钱</li>
+<li style="list-style: none"><input type="checkbox" checked> 稳重一点，不要总是冒冒失失</li>
+<li style="list-style: none"><input type="checkbox" checked> 哦对，提高英雄联盟段位，练一练补刀，看一看攻略。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-08-29/七夕的一些小感慨/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-08-29/七夕的一些小感慨/" class="post-title-link" itemprop="url">七夕的一些小感慨</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-29 03:47:38" itemprop="dateCreated datePublished" datetime="2017-08-29T03:47:38+08:00">2017-08-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-29 23:57:00" itemprop="dateModified" datetime="2021-01-29T23:57:00+08:00">2021-01-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">对于这几天的一个进度总结以及一些小感慨</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>对于这几天的一个进度总结以及一些小感慨。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3uxqr7adj30xc0npqe7.jpg" alt><br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-08-29/七夕的一些小感慨/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-08-25/近期计划/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-08-25/近期计划/" class="post-title-link" itemprop="url">近期计划</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-25 02:22:12" itemprop="dateCreated datePublished" datetime="2017-08-25T02:22:12+08:00">2017-08-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-29 23:57:00" itemprop="dateModified" datetime="2021-01-29T23:57:00+08:00">2021-01-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>近期颇感颓废，效率低下，特贴出计划，自勉。</p>
+<p>计划分为长短期，每日总结。</p>
+<ul>
+<li>面试准备（数据结构、机器学习）</li>
+<li>编程语言（ C++ 、python）</li>
+<li>项目相关 </li>
+<li>课程相关 </li>
+<li>机器学习 &amp; 深度学习</li>
+<li>其它 </li>
+<li>待办
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-08-25/近期计划/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-08-13/【译】如何应对CNN中的过拟合问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-08-13/【译】如何应对CNN中的过拟合问题/" class="post-title-link" itemprop="url">【译】如何应对CNN中的过拟合问题</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-13 01:06:18" itemprop="dateCreated datePublished" datetime="2017-08-13T01:06:18+08:00">2017-08-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-29 23:57:00" itemprop="dateModified" datetime="2021-01-29T23:57:00+08:00">2021-01-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">什么是 CNN 以及如何解决欠拟合和过拟合问题</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>掘金译文</p>
+<h1 id="深度学习系列3-CNNs-以及应对过拟合的详细探讨"><a href="#深度学习系列3-CNNs-以及应对过拟合的详细探讨" class="headerlink" title="深度学习系列3 - CNNs 以及应对过拟合的详细探讨"></a>深度学习系列3 - CNNs 以及应对过拟合的详细探讨</h1><h2 id="什么是卷积、最大池化和-Dropout？"><a href="#什么是卷积、最大池化和-Dropout？" class="headerlink" title="什么是卷积、最大池化和 Dropout？"></a>什么是卷积、最大池化和 Dropout？</h2><blockquote>
+<p>这篇文章是深度学习系列中一篇文章。请查看<a href="https://github.com/xitu/gold-miner/blob/master/TODO/deep-learning-1-setting-up-aws-image-recognition.md" target="_blank" rel="noopener">#系列1</a>和<a href="https://github.com/xitu/gold-miner/blob/master/TODO/deep-learning-2-convolutional-neural-networks.md" target="_blank" rel="noopener">#系列2</a></p>
+</blockquote>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3uyowcrkj317z0gcwns.jpg" alt="数据增强（Data augmentation）"></p>
+<p> 欢迎来到本系列教程的第三部分的学习！这周我会讲解一些卷积神经网络（Convolutional Neural Network, CNN）的内容并且讨论如何解决<code>欠拟合</code>和<code>过拟合</code>。</p>
+<h4 id="一、卷积（Convolution）"><a href="#一、卷积（Convolution）" class="headerlink" title="一、卷积（Convolution）"></a><strong>一、卷积（Convolution）</strong></h4><p>那么究竟什么是卷积呢？你可能还记得我之前的博客，我们使用了一个小的滤波器（Filter），并在整个图像上滑动这个滤波器。然后，将图像的像素值与滤波器中的像素值相乘。使用深度学习的优雅之处在于我们不必考虑这些滤波器应该是什么样的（神经网络会自动学习并选取最佳的滤波器）。通过随机梯度下降（Stohastic Gradient Descent,SGD），网络能够自主学习从而达到最优滤波器效果。滤波器被随机初始化，并且位置不变。这意味着他们可以在图像中找到任何物体。同时，该模型还能学习到是在这个图像的哪个位置找到这个物体。</p>
+<p>零填充（Zero Padding）是应用此滤波器时的有用工具。这些都是在图像周围的零像素的额外边框 —— 这允许我们在将滤镜滑过图像时捕获图像的边缘。你可能想知道滤波器应该多大，研究表明，较小的滤波器通常表现更好。在这个例子当中，我们使用大小为 3x3 的滤波器。</p>
+<p>当我们将这些滤波器依次滑过图像时，我们基本上创建了另一个图像。因此，如果我们的原始图像是 30x 30 ，则带有12个滤镜的卷积层的输出将为 30x30x12 。现在我们有一个张量，它基本上是一个超过 2 维的矩阵。现在你也就知道 TensorFlow 的名字从何而来。</p>
+<p>在每个卷积层（或多个）之后，我们通常就得到了最大池化（Max pooling）层。这个层会减少图像中的像素数量。例如，我们可以从图像中取出一个正方形然后用这个正方形里面像素的最大值代替这个正方形。<br> <img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3uyr8jl1j30lv0a80tc.jpg" alt="最大池化"></p>
+<p>得益于最大池化，我们的滤波器可以探索图像的较大部分。另外，由于像素损失，我们通常会增加使用最大池化后的滤波器数量。<br>理论上来说，每个模型架构都是可行的并且为你的的问题提供一个很好的解决方案。然而，一些架构比其他架构要快得多。一个很差的架构可能需要超过你剩余生命的时间来得出结果。因此，考虑你的模型的架构以及我们为什么使用最大池并改变所使用的滤波器的数量是有意义的。为了在 CNN 上完成这个部分，<a href="http://yosinski.com/deepvis#toolbox" target="_blank" rel="noopener">这个</a>页面提供了一个很好的视频，可以将发生在 CNN 内部的事情可视化。</p>
+<h4 id="二、欠拟合-vs-过拟合"><a href="#二、欠拟合-vs-过拟合" class="headerlink" title="二、欠拟合 vs. 过拟合"></a>二、欠拟合 vs. 过拟合</h4><p>你如何知道你的模型是否欠拟合？ 如果你的验证集的准确度高于训练集，那就是模型欠拟合。此外，如果整个模型表现得不好，也会被称为欠拟合。例如，使用线性模型进行图像识别通常会出现欠拟合的结果。也有可能是  Dropout（Dropout）的原因导致你在深层神经网络中遇到欠拟合的情况。<br>Dropout 在模型训练时随机将部分激活函数设置为零（让网络某些隐含层节点的权重不工作），以避免过拟合。这种情况一般不会发生在验证/测试集的预测中，如果发生，你可以移除 <code>Dropout</code>来解决。如果模型现在出现大规模的过拟合，你可以开始添加小批量的 <code>Dropout</code>。</p>
+<blockquote>
+<p>通用法则：从过度拟合模型开始，然后采取措施消除过拟合。</p>
+</blockquote>
+<p>当你的模型过度适合训练集时，就会发生过拟合。那么模型将难以泛化从而无法识别不在训练集中的新例子。例如，你的模型只能识别你的训练集中的特定图像，而不是通用模型，同时你在训练集上的准确性会高于验证/测试集。那么我们可以通过哪些方法来减少过拟合呢？</p>
+<p><strong>减少过拟合的步骤</strong></p>
+<ol>
+<li>添加更多数据</li>
+<li>使用数据增强</li>
+<li>使用泛化性能更佳的模型结构</li>
+<li>添加正规化（多数情况下是 Dropout，L1 / L2正则化也有可能）</li>
+<li>降低模型复杂性。</li>
+</ol>
+<p>第一步当然是采集更多的数据。但是，在大多数情况下，你是做不到这一点的。这里我们先假定你采集到了所有的数据。下一步是数据增强：这也是我们一直推荐使用的方法。</p>
+<p>数据增强包括随机旋转图像、放大图像、添加颜色滤波器等等。 </p>
+<p>数据增加只适用于训练集而不是验证/测试集。检查你是不是使用了过多的数据增强十分有效。例如，如果你那一只猫的图片放大太多，猫的特征就不再可见了，模型也就不会通过这些图像的训练中获得更好的效果。下面让我们来探索一下数据增强！</p>
+<p>对于 Fast AI 课程的学习者：请注意教材中使用 “width_zoom_range” 作为数据扩充参数之一。但是，这个选项在 Keras 中不再可用。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3uyt43x0j30ed098758.jpg" alt="原始图像"></p>
+<p>现在我们来看看执行数据增强后的图像。所有的“猫”仍然能够被清楚地识别出来。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uyuige2j318g0f8jx9.jpg" alt="数据增强之后的图像"></p>
+<p>第三步是使用泛化性能更佳的模型结构。然而，更重要的是第四步：增加正则化。三个最受欢迎的选项是：Dropout，L1 正则化和 L2 正则化。我之前提到过，在深入的学习中，大部分情况下你看到的都是 Dropout 。Dropout 在训练中删除随机的激活样本（使其为零）。在 Vgg 模型中，这仅适用于模型末端的完全连接的层。然而，它也可以应用于卷积层。要注意的是，Dropout 会导致信息丢失。如果你在第一层失去了一些信息，那么整个网络就会丢失这些信息。因此，一个好的做法是第一层使用较低的Dropout，然后逐渐增加。第五个也是最后一个选择是降低网络的复杂性。实际上，在大多数情况下，各种形式的正规化足以应付过拟合。<br><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uyvxxh8j30t00eg0w8.jpg" alt></p>
+<blockquote>
+<p>左边是原来的神经网络，右边是采用 Dropout 后的网络</p>
+</blockquote>
+<h4 id="三、批量归一化（Batch-Normalization-）"><a href="#三、批量归一化（Batch-Normalization-）" class="headerlink" title="三、批量归一化（Batch Normalization ）"></a><strong>三、批量归一化（Batch Normalization ）</strong></h4><p>最后，我们来讨论批量归一化。这是你永远都需要做的事情！批量归一化是一个相对较新的概念，因此在 Vgg 模型中尚未实现。</p>
+<p>如果你对机器学习有所了解，你一定听过标准化模型输入。批量归一化加强了这一步。批量归一化在每个卷积层之后添加“归一化层”。这使得模型在训练中收敛得更快，因此也允许你使用更高的学习率。</p>
+<p>简单地标准化每个激活层中的权重不起作用。随机梯度下降非常顽固。如果使得其中一个比重非常高，那么下一次训练它就会简单地重复这个过程。通过批量归一化，模型可以在每次训练中调整所有的权重而非仅仅只是一个权重。</p>
+<h4 id="四、MNIST-数字识别"><a href="#四、MNIST-数字识别" class="headerlink" title="四、MNIST 数字识别"></a><strong>四、MNIST 数字识别</strong></h4><p><a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">MNIST</a>手写数字数据集是机器学习中最着名的数据集之一。数据集也是一个检验我们所学 CNN 知识的很好的方式。<a href="https://www.kaggle.com/c/digit-recognizer" target="_blank" rel="noopener">Kaggle</a>也承载了 MNIST 数据集。这段我很快写出的代码，在这个数据集上的准确度为96.8％。</p>
+<pre><code>import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+
+train = pd.read_csv(&apos;train_digits.csv&apos;)
+test = pd.read_csv(&apos;test_digits.csv&apos;)
+
+X = train.drop(&apos;label&apos;, axis=1)
+y = train[&apos;label&apos;]
+
+rfc = RandomForestClassifier(n_estimators=300)
+pred = rfc.fit(X, y).predict(test)
+</code></pre><p>然而，配备深层 CNN 可以达到 99.7％ 的效果。本周我将尝试将 CNN 应用到这个数据集上，希望我在下周可以报告最新的准确率并且讨论我所遇到的问题。</p>
+<p>如果你喜欢这篇文章，欢迎推荐它以便其他人可以看到它。您还可以按照此配置文件跟上我在 fast AI 课程中的进度。到时候见！</p>
+<blockquote>
+<p><a href="https://github.com/lj147/" target="_blank" rel="noopener">译者</a>注： 翻译本文的时候，我事先查阅了一些资料以保证对于原文有更好的理解，但是由于个人水平有限等等原因，有些地方表达的不甚清楚，同时还添加了一定的辅助参考信息以更好的说明问题。若读者在译文中发现问题，欢迎随时与我联系或提 issue。</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a href="https://juejin.im" target="_blank" rel="noopener">掘金</a> 上的英文分享文章。内容覆盖 <a href="https://github.com/xitu/gold-miner#android" target="_blank" rel="noopener">Android</a>、<a href="https://github.com/xitu/gold-miner#ios" target="_blank" rel="noopener">iOS</a>、<a href="https://github.com/xitu/gold-miner#react" target="_blank" rel="noopener">React</a>、<a href="https://github.com/xitu/gold-miner#前端" target="_blank" rel="noopener">前端</a>、<a href="https://github.com/xitu/gold-miner#后端" target="_blank" rel="noopener">后端</a>、<a href="https://github.com/xitu/gold-miner#产品" target="_blank" rel="noopener">产品</a>、<a href="https://github.com/xitu/gold-miner#设计" target="_blank" rel="noopener">设计</a> 等领域，想要查看更多优质译文请持续关注 <a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a>。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>原文地址：<a href="https://medium.com/towards-data-science/deep-learning-3-more-on-cnns-handling-overfitting-2bd5d99abe5d" target="_blank" rel="noopener">Deep Learning-3-more-on-cnns-handling-overfitting</a></li>
+<li>原文作者：<a href="https://medium.com/@r.ruizendaal" target="_blank" rel="noopener">Rutger Ruizendaal</a></li>
+<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a></li>
+<li>本文永久链接：<a href="https://github.com/xitu/gold-miner/blob/master/TODO/deep-learning-3-more-on-cnns-handling-overfitting.md" target="_blank" rel="noopener">https://github.com/xitu/gold-miner/blob/master/TODO/deep-learning-3-more-on-cnns-handling-overfitting.md</a></li>
+<li>译者：<a href="https://github.com/lj147/" target="_blank" rel="noopener">曹真</a></li>
+<li>校对者：<a href="https://github.com/lileizhenshuai" target="_blank" rel="noopener">Lilei</a> &amp;&amp; <a href="https://github.com/changkun" target="_blank" rel="noopener">changkun</a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-08-02/解决了一个困扰三天的bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-08-02/解决了一个困扰三天的bug/" class="post-title-link" itemprop="url">解决了一个困扰三天的bug</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-02 02:25:23" itemprop="dateCreated datePublished" datetime="2017-08-02T02:25:23+08:00">2017-08-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-29 23:57:00" itemprop="dateModified" datetime="2021-01-29T23:57:00+08:00">2021-01-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">Spring Boot中 hibernate 延迟加载 | 懒加载（lazy loading）造成序列化失败</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>描述：Spring Boot中 hibernate 延迟加载 | 懒加载（lazy loading）造成序列化失败</p>
+<p>明日填坑</p>
+<p>过了好几天才来填，很难过，因为当时解决的时候没有立即记录，现在我对着电脑发呆，想了十分钟记不起这个bug到底是什么。</p>
+<p>可啪。</p>
+<p>于是决定记录新遇到的一个问题。 </p>
+<h1 id="一、Spring-hibernate-懒实例化"><a href="#一、Spring-hibernate-懒实例化" class="headerlink" title="一、Spring hibernate 懒实例化"></a>一、Spring hibernate 懒实例化</h1><p>Spring Boot中 <code>hibernate</code> 延迟加载 | 懒加载（lazy loading）造成序列化失败</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>背景很简单，一个家长（Guardian）对应多个孩子（Student）</p>
+<p>首先在家长bean里定义 <code>List&lt;Student&gt; students</code> ，接着通过guardian对象的<code>guardian.getStudents()</code>获取对应的学生对象，按理说没有任何问题</p>
+<p>Guardian.java 家长bean</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"Guardian"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Guardian</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OneToMany</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Student&gt; students; <span class="comment">//学生列表</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> GuardianController.java  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"孩子列表"</span>)</span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/children"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  List&lt;Student&gt; <span class="title">children</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">        Guardian guardian = userService.currentGuardian(request);</span><br><span class="line">        <span class="keyword">return</span> guardian.getStudents();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在IDEA本地运行的时候接口正常:</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uyitqclj30un0j5goh.jpg" alt="7FE3731E-DE7B-49BB-A644-941D10D14212"></p>
+</li>
+</ul>
+<ul>
+<li>但是奇怪的是部署到服务器Tomcat上之后接口报错：</li>
+<li><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3uyj9o1mj30ui0dxtae.jpg" alt></li>
+</ul>
+<p>输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;timestamp&quot;: 1501826190599,</span><br><span class="line">    &quot;status&quot;: 500,</span><br><span class="line">    &quot;error&quot;: &quot;Internal Server Error&quot;,</span><br><span class="line">    &quot;exception&quot;: &quot;org.springframework.http.converter.HttpMessageNotWritableException&quot;,</span><br><span class="line">    &quot;message&quot;: &quot;Could not write content: could not extract ResultSet (through reference chain: org.sklse.lab.bean.ResultModel[\&quot;content\&quot;]-&gt;org.hibernate.collection.internal.PersistentBag[0]-&gt;org.sklse.lab.bean.Student[\&quot;submittedHomeworks\&quot;]); nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not extract ResultSet (through reference chain: org.sklse.lab.bean.ResultModel[\&quot;content\&quot;]-&gt;org.hibernate.collection.internal.PersistentBag[0]-&gt;org.sklse.lab.bean.Student[\&quot;submittedHomeworks\&quot;])&quot;,</span><br><span class="line">    &quot;path&quot;: &quot;/edu/guardian/children&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>一番debug之后很是头疼，后来请教了一位长者，指出可能是<code>懒实例化</code>的问题，于是查找到<a href="http://www.jianshu.com/p/c676fd86a219" target="_blank" rel="noopener">解决方案</a>，在Spring Boot的<code>application.properties</code>配置项添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true</span><br></pre></td></tr></table></figure>
+<p>于是问题顺利解决</p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><blockquote>
+<p>这个例子当中的<code>guardian.getStudents()</code>是延迟加载的，最开始的studentList其实放的是 Hibernate 的 <a href="https://docs.jboss.org/hibernate/orm/3.2/api/org/hibernate/collection/PersistentBag.html" target="_blank" rel="noopener">PersistentBag</a> ，这个对象是不可以序列化的。</p>
+</blockquote>
+<p> 待补充细节</p>
+<h1 id="二、Tomcat缓存问题"><a href="#二、Tomcat缓存问题" class="headerlink" title="二、Tomcat缓存问题"></a>二、Tomcat缓存问题</h1><p>本文链接：<a href="http://hellogod.cn/2017-08-02/解决了一个困扰三天的bug/">http://hellogod.cn/2017-08-02/解决了一个困扰三天的bug/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-07-29/即将步入大三的学长给CS专业新生的一些建议/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-07-29/即将步入大三的学长给CS专业新生的一些建议/" class="post-title-link" itemprop="url">即将步入大三的学长给CS专业新生的一些建议</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-29 22:39:46" itemprop="dateCreated datePublished" datetime="2017-07-29T22:39:46+08:00">2017-07-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-15 02:23:58" itemprop="dateModified" datetime="2018-12-15T02:23:58+08:00">2018-12-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大学总结/" itemprop="url" rel="index"><span itemprop="name">大学总结</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">一篇面向未来即将进入CS专业的新生的经验分享</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>2018-06-27 更新： 这些东西，现在再看会觉得幼稚可笑，本想已删了之，还是觉得保留，写这些本来就是为了记录嘛，也算是记录当时的一些幼稚可爱心情。</p>
+</blockquote>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-07-29/即将步入大三的学长给CS专业新生的一些建议/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-07-29/音乐和电影/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-07-29/音乐和电影/" class="post-title-link" itemprop="url">音乐和电影</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-29 01:29:32" itemprop="dateCreated datePublished" datetime="2017-07-29T01:29:32+08:00">2017-07-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-29 23:57:00" itemprop="dateModified" datetime="2021-01-29T23:57:00+08:00">2021-01-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">日常比较喜欢的音乐</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>喵喵喵，今天似乎没什么可以写的，但是还是想保持每天写点东西，于是准备推几首音乐。没错就是这样…</p>
+<p>虽然这几个似乎看起来不是很搭~</p>
+<p>首先是一首很清的歌：《初恋旧爱新欢》，看歌名就知道很好听啊，所以试试看吧</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=30284674&auto=1&height=66"></iframe><br><img src="http://orkqx44nq.bkt.clouddn.com/2017-07-29-15012639094624.jpg" alt><br><br><br><br>接着是一首很奇怪的歌：《自挂东南枝》，曲风也很奇怪，总之高考生慎入（呸，才没有高中生看你博客！不对，是没人看你博客！）<br><img src="http://orkqx44nq.bkt.clouddn.com/2017-07-29-15012639470563.jpg" alt><br><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28695397&auto=0&height=66"></iframe>
+
+<p>最后是最爱的的一个版本：李宗盛的《漂洋过海来看你》</p>
+<iframe width="80%" height="400" src="https://www.youtube.com/embed/sISjPew8yX0" frameborder="0" allowfullscreen></iframe>
+
+<p>这个要附上歌词</p>
+<blockquote>
+<p>为你我用了半年的积蓄<br>飘洋过海的来看你<br>为了这次相聚<br>我连见面时的呼吸都曾反复练习<br>言语从来没能将我的情意<br>表达千万分之一<br>为了这个遗憾<br>我在夜里想了又想不肯睡去<br>记忆它总是慢慢的累积<br>在我心中无法抹去<br>为了你的承诺<br>我在最绝望的时候<br>都忍着不哭泣<br>陌生的城市啊<br>娃娃《漂洋过海来看你》简谱<br>娃娃《漂洋过海来看你》简谱<br>熟悉的角落里<br>也曾彼此安慰<br>也曾相拥叹息<br>不管将会面对什么样的结局<br>在漫天风沙里 望着你远去<br>我竟悲伤得不能自己<br>多盼能送君千里<br>直到山穷水尽<br>一生和你相依<br>为你我用了半年的积蓄<br>飘洋过海的来看你<br>为了这次相聚<br>我连见面时的呼吸都曾反复练习<br>言语从来没能将我的情意<br>表达千万分之一<br>为了这个遗憾<br>我在夜里想了又想不肯睡去<br>记忆它总是慢慢的累积<br>在我心中无法抹去<br>为了你的承诺<br>我在最绝望的时候<br>都忍着不哭泣<br>陌生的城市啊<br>熟悉的角落里<br>也曾彼此安慰<br>也曾相拥叹息<br>不管将会面对什么样的结局<br>在漫天风沙里 望着你远去<br>我竟悲伤的不能自已<br>多盼能送君千里<br>直到山穷水尽<br>一生和你相依<br>陌生的城市啊<br>熟悉的角落里<br>也曾彼此安慰<br>也曾相拥叹息<br>不管将会面对什么样的结局<br>在漫天风沙里 望着你远去<br>我竟悲伤的不能自已<br>多盼能送君千里<br>直到山穷水尽<br>一生和你相依<br>陌生的城市啊<br>熟悉的角落里<br>也曾彼此安慰<br>也曾相拥叹息<br>不管将会面对什么样的结局<br>在漫天风沙里 望着你远去<br>我竟悲伤的不能自已<br>多盼能送君千里<br>直到山穷水尽<br>一生和你相依</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg" alt="曹真">
+            
+              <p class="site-author-name" itemprop="name">曹真</p>
+              <div class="site-description motion-element" itemprop="description">微信公众号：一时博客</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">158</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/caozhen233" title="zhihu &rarr; https://www.zhihu.com/people/caozhen233" rel="noopener" target="_blank"><i class="fa fa-fw fa-book"></i>zhihu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.linkedin.com/in/%E7%9C%9F-%E6%9B%B9-985694141/" title="linkedin &rarr; https://www.linkedin.com/in/%E7%9C%9F-%E6%9B%B9-985694141/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>linkedin</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="https://beian.miit.gov.cn/#/Integrated/index" rel="noopener" target="_blank">豫ICP备17006732号-1 </a>&copy; 2017 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹真</span>
+
+  
+
+  
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<style>
+  .copy-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+    
+    user-select: none;
+    outline: 0;
+  }
+
+  .highlight-wrap .copy-btn {
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    
+      right: 4px;
+      top: 8px;
+    
+  }
+
+  .highlight-wrap:hover .copy-btn,
+  .highlight-wrap .copy-btn:focus {
+    opacity: 1;
+  }
+
+  .highlight-wrap {
+    position: relative;
+  }
+</style>
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+</body>
+</html>

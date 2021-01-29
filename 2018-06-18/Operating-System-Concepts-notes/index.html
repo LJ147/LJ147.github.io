@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta name="referrer" content="no-referrer">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png?v=7.0.1">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="《计算机操作系统》 第四版">
+<meta name="keywords" content="操作系统,秋招">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统原理笔记">
+<meta property="og:url" content="https://hellogod.cn/2018-06-18/Operating-System-Concepts-notes/index.html">
+<meta property="og:site_name" content="一时博客">
+<meta property="og:description" content="《计算机操作系统》 第四版">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fsfosnrdt7j307g0b3jrz.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fsl3w8xyffj30h80fa75r.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fsl3wr8a9vj30iq0h40v1.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fsfnsaot5oj30gb0873z5.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fsfpcm6z9kj30q90fxtcf.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fsfpeaphswj30g70nmgsn.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fsfq1r5kvjj30oq0aoad5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fsfqgmd0k5j30ox070gom.jpg">
+<meta property="og:updated_time" content="2018-06-22T05:08:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="操作系统原理笔记">
+<meta name="twitter:description" content="《计算机操作系统》 第四版">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fsfosnrdt7j307g0b3jrz.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一时博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://hellogod.cn/2018-06-18/Operating-System-Concepts-notes/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>操作系统原理笔记 | 一时博客</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-96527706-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !false) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-96527706-1');
+    }
+  </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f0bed23c03bfeb07d49563f032c53d63";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一时博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">学无止境</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">192</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">32</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">118</span></a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/LJ147" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2018-06-18/Operating-System-Concepts-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">操作系统原理笔记
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-18 20:08:11" itemprop="dateCreated datePublished" datetime="2018-06-18T20:08:11+08:00">2018-06-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-22 13:08:26" itemprop="dateModified" datetime="2018-06-22T13:08:26+08:00">2018-06-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学科笔记/" itemprop="url" rel="index"><span itemprop="name">学科笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">《计算机操作系统》 第四版</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前段时间和同事聊到面试，几个非科班出身（数据分析岗）的说操作系统之类的不重要，面试也不怎么考，实践中也用得少。</p>
+<p>我一时语塞，想争论一番，考虑之后还是放弃。当然这里不是在讨论所谓科班or非科班的优越性。我也在想，这些知识能带给我们什么。</p>
+<p>开始实习之后，身边有很多数学、信管、金融甚至完全不搭边专业的同事，他们同样在自己的岗位上做的很好，这时候不禁在想，是他们更用功把这些gap补齐了，还是这一行的门槛其实本身就很低，又或者是以我为代表的人没有把科班的东西真正掌握好。</p>
+<p>又或者说，假使我学的不是CS专业，想要进入这个专业，是不是我只需要学一部分课程就够了呢？</p>
+<p>当然，我自然是相信，学得越多，掌握的越多，对于日后的长久发展越有利。</p>
+<p>稍微扯了一些，这篇文章的主题还是操作系统，这里把下面这本书<code>copy</code>一遍，列出一个提纲，希望在这个过程中有所得，也便于日后回顾。</p>
+<p>对于考试而言，重点掌握几个算法应对大题应该无虞。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fsfosnrdt7j307g0b3jrz.jpg" alt></p>
+<a id="more"></a>
+<h1 id="一、操作系统引论"><a href="#一、操作系统引论" class="headerlink" title="一、操作系统引论"></a>一、操作系统引论</h1><h2 id="操作系统的主要功能"><a href="#操作系统的主要功能" class="headerlink" title="操作系统的主要功能"></a>操作系统的主要功能</h2><p>操作系统的<strong>主要任务</strong>，是为多道程序的运行提供良好的运行环境，以保证多道程序能有条不紊地、高效地运行，并能最大程度地提高系统中各种资源的利用率和方便用户的使用。</p>
+<h3 id="处理机管理功能"><a href="#处理机管理功能" class="headerlink" title="处理机管理功能"></a>处理机管理功能</h3><p>创建和撤销进程（线程），对诸如进程（线程）的运行进行协调，实现进程（线程）的交换，以及按照一定的算法把处理机分配给进程（线程）。</p>
+<ul>
+<li>进程控制：为作业创建进程，撤销已结束的进程，以及控制进程在运行过程中的状态转换。</li>
+<li>进程同步：为多个进程（含线程）的运行进行协调，有两种协调方式。<ul>
+<li>进程互斥方式：对临界资源访问时，应采用互斥方式</li>
+<li>进程同步方式：相互合作完成共同任务的诸进程间，由同步机构对他们的执行顺序加以协调，例如信号量等。</li>
+</ul>
+</li>
+<li>进程通信：当想相互合作的进程处于同一计算机系统时，通常在它们之间采用直接通信方式，即由源进程利用发送命令直接将消息（Message）挂到目标进程的消息队列上，以后由目标进程接受命令从其消息队列中取出消息。</li>
+<li>调度：在后备队列上等待的每个作业都需经过调度才能执行。在传统的操作系统中，包括<strong>作业调度</strong>和<strong>进程调度</strong>两步。<ul>
+<li>作业调度：作业调度的基本任务是从后备队列中按照一定的算法，选择出若干个作业，为它们分配运行所需的资源(首先是分配内存)，在将它们调入内存后，便分别为它们建立进程，使它们都成为可能获得处理机的就绪进程，并按照一定的算法将它们插入就绪队列。</li>
+<li>进程调度：进程调度的任务是从进程的就绪队列中，按照一定的算法选出一个进程， 把处理机分配给它，并为它设置运行现场，使进程投入执行。值得提出的是，在多线程 OS 中，通常是把线程作为独立运行和分配处理机的基本单位，为此，须把就绪线程排成一个队列，每次调度时，是从就绪线程队列中选出一个线程，把处理机分配给它。</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作系统的发展"><a href="#操作系统的发展" class="headerlink" title="操作系统的发展"></a>操作系统的发展</h2><h3 id="无操作系统"><a href="#无操作系统" class="headerlink" title="无操作系统"></a>无操作系统</h3><h3 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h3><p>存储器管理的主要任务是为多道程序的运行提供良好的环境，方便用户使用存储器， 提高存储器的利用率以及能从逻辑上扩充内存。为此，存储器管理应具有内存分配、内存 保护、地址映射和内存扩充等功能。</p>
+<ul>
+<li>内存分配：为每道程序分配内存空间；提高存储器的利用率，减少不可用的内存空间；允许正在运行的程序申请附加的内存空间，以使用程序和数据动态增长的需要。分配方式有静态和动态分配之分。内存分配应具有的结构和功能：<ul>
+<li>内存分配数据结构</li>
+<li>内存分配功能</li>
+<li>内存回收功能</li>
+</ul>
+</li>
+<li>内存保护：确保每道用户程序只在自己的内存空间运行，彼此互不干扰；决不允许用户程序访问操作系统程序的程序和数据；也不允许用户程序转移到非共享的其它用户程序中去执行。</li>
+<li>地址映射：逻辑地址到物理地址的转换</li>
+<li>内存扩充：借助虚拟存储结束，从逻辑上扩充内充容量。<ul>
+<li>请求调入功能：从磁盘调入内存</li>
+<li>置换功能：将内存中暂时不用的程序和数据调至磁盘，腾出空间。</li>
+</ul>
+</li>
+</ul>
+<h3 id="设备管理和文件管理。"><a href="#设备管理和文件管理。" class="headerlink" title="设备管理和文件管理。"></a>设备管理和文件管理。</h3><h1 id="二、进程管理"><a href="#二、进程管理" class="headerlink" title="二、进程管理"></a>二、进程管理</h1><h2 id="进程的基本概念"><a href="#进程的基本概念" class="headerlink" title="进程的基本概念"></a>进程的基本概念</h2><p>进程：作为资源分配和独立运行的基本单位，程序段、相关的数据段和PCB（Process Control Block）组成进程实体。</p>
+<p><strong>进程的特征：</strong></p>
+<ul>
+<li>结构特性：<strong>程序段</strong>、<strong>相关的数据段</strong>和<strong>PCB</strong>（Process Control Block）组成进程实体。</li>
+<li>动态性：进程的实质是指进程实体的一次执行过程，“由创建而产生，由调度而执行，由撤销而消亡”</li>
+<li>并发性：多个进程同时存在于内存中，且能在一段时间内同时运行。</li>
+<li>独立性在传统的 OS 中，独立性是指进程实体是一个能独立运行、独立分配资源和独立接受调度的基本单位。</li>
+<li>异步性：进程按照各自独立的、不可预知的速度向前推进。</li>
+</ul>
+<p><strong>前趋图</strong> (Precedence Graph):是一个有向无循环图，记为 DAG(Directed Acyclic Graph)，用于描述进程之间执行的前后关系。</p>
+<p>进程控制块（PCB）中的信息：</p>
+<ul>
+<li>进程标识符：</li>
+<li>外部标识符</li>
+<li>处理机状态：处理机中断时，信息保存在PCB中，以便于重新执行时，从断点继续执行。<ul>
+<li>1.通用寄存器： </li>
+<li>2.指令寄存器 </li>
+<li>3.程序状态字（PSW）</li>
+<li>4.用户栈指针</li>
+</ul>
+</li>
+<li>进程调度信息：<ul>
+<li>1.进程状态，进程调度和对换时的依据  </li>
+<li>2.进程优先级</li>
+<li>3.进程调度所需其余信息 </li>
+<li>4.事件，执行到阻塞所发生的时间，即阻塞原因</li>
+</ul>
+</li>
+</ul>
+<p>进程控制块的<strong>组织方式</strong>：</p>
+<ul>
+<li>链接方式</li>
+<li>索引方式</li>
+</ul>
+<h3 id="进程与程序对比"><a href="#进程与程序对比" class="headerlink" title="进程与程序对比"></a>进程与程序对比</h3><blockquote>
+<p>试从动态性，并发性和独立性上比较进程和程序.</p>
+</blockquote>
+<ul>
+<li>a. 动态性是进程最基本的特性，可表现为由创建而产生，由调度而执行，因得不到资源而暂停执行，<br>以及由撤销而消亡，因而进程由一定的生命期；而程序只是一组有序指令的集合，是静态实体.</li>
+<li>b. 并发性是进程的重要特征，同时也是OS的重要特征.引入进程的目的正是为了使其程序能和其它进程<br>的程序并发执行，而程序是不能并发执行的.</li>
+<li>c. 独立性是指进程实体是一个能独立运行的基本单位，同时也是系统中独立获得资源和独立调度的基本<br>单位.而对于未建立任何进程的程序，都不能作为一个独立的单位参加运行. </li>
+</ul>
+<p><strong>进程的三种状态</strong></p>
+<ul>
+<li>就绪：进程获得出CPU以外所有资源，只要获得CPU就可以立即执行。</li>
+<li>执行：进程获得CPU，程序正在执行。</li>
+<li>阻塞：正在执行的进程由于发生某些时间而暂时无法继续执行时，从而放气处理机处于暂停状态。（例如IO请求、申请缓存空间）</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fsl3w8xyffj30h80fa75r.jpg" alt><br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fsl3wr8a9vj30iq0h40v1.jpg" alt></p>
+<blockquote>
+<p>1.试说明进程在三个基本状态之间转换的典型原因.</p>
+</blockquote>
+<p>a. 处于就绪状态的进程，当进程调度程序为之分配了处理机后，该进程便由就绪状态变为执行状态.<br>b. 当前进程因发生某事件而无法执行，如访问已被占用的临界资源，就会使进程由执行状态转变为阻<br>塞状态.<br>c. 当前进程因时间片用完而被暂停执行，该进程便由执行状态转变为就绪状态.</p>
+<blockquote>
+<p>2.为什么要引入挂起状态?该状态具有哪些性质?</p>
+</blockquote>
+<p>a. 引入挂起状态处于5中需要: 终端用户的需要，父进程的需要，操作系统的需要，对换的需要和负荷<br>调节的需要.<br>b. 处于挂起状态的进程不能接收处理机调度. </p>
+<h3 id="顺序执行"><a href="#顺序执行" class="headerlink" title="顺序执行"></a>顺序执行</h3><ul>
+<li>顺序性</li>
+<li>封闭性</li>
+<li>可再现性</li>
+</ul>
+<h3 id="并发执行"><a href="#并发执行" class="headerlink" title="并发执行"></a>并发执行</h3><ul>
+<li>间断性</li>
+<li>失去封闭</li>
+<li>不可再现性</li>
+</ul>
+<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><h3 id="在进行进程切换时，所要保存的处理机状态信息主要有哪些"><a href="#在进行进程切换时，所要保存的处理机状态信息主要有哪些" class="headerlink" title="在进行进程切换时，所要保存的处理机状态信息主要有哪些?"></a>在进行进程切换时，所要保存的处理机状态信息主要有哪些?</h3><p>a. 进程当前暂存信息；b. 下一条指令地址信息；c. 进程状态信息；d. 过程和系统调用参数及调用地址信息. </p>
+<h3 id="试说明引起进程创建的主要事件"><a href="#试说明引起进程创建的主要事件" class="headerlink" title="试说明引起进程创建的主要事件"></a>试说明引起进程创建的主要事件</h3><p>a. 用户登陆；b. 作业调度；c. 提供服务；d. 应用请求. </p>
+<h3 id="试说明引起进程撤消的主要事件"><a href="#试说明引起进程撤消的主要事件" class="headerlink" title="试说明引起进程撤消的主要事件"></a>试说明引起进程撤消的主要事件</h3><p>a. 正常结束；b. 异常结束；c. 外界干预； </p>
+<h3 id="在创建一个进程时，需完成的主要工作是什么"><a href="#在创建一个进程时，需完成的主要工作是什么" class="headerlink" title="在创建一个进程时，需完成的主要工作是什么?"></a>在创建一个进程时，需完成的主要工作是什么?</h3><p>a. 操作系统发现请求创建新进程事件后，调用进程创建原语Creat()；b. 申请空白PCB；c. 为新进程分配资源；d. 初始化进程控制块；e. 将新进程插入就绪队列. </p>
+<h3 id="在撤消一个进程时，需完成的主要工作是什么"><a href="#在撤消一个进程时，需完成的主要工作是什么" class="headerlink" title="在撤消一个进程时，需完成的主要工作是什么?"></a>在撤消一个进程时，需完成的主要工作是什么?</h3><p>a. OS调用进程终止原语；<br>b. 根据被终止进程的标志符，从PCB集合中检索出该进程的PCB，从中读出该进程的状态；<br>c. 若被终止进程正处于执行状态，应立即中止该进程的执行，并设置调度标志为真；<br>d. 若该进程还有子孙进程，还应将其所有子孙进程予以终止；<br>e. 将该进程所拥有的全部资源，或者归还给其父进程，或者归还给系统；<br>f. 将被终止进程(它的PCB)从所在队列(或链表)中移出，等待其它程序来搜集信息. </p>
+<h3 id="试说明引起进程阻塞或被唤醒的主要事件是什么"><a href="#试说明引起进程阻塞或被唤醒的主要事件是什么" class="headerlink" title="试说明引起进程阻塞或被唤醒的主要事件是什么?"></a>试说明引起进程阻塞或被唤醒的主要事件是什么?</h3><p>a. 请求系统服务；b. 启动某种操作；c. 新数据尚未到达；d. 无新工作可做. </p>
+<h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><h3 id="同步机构应遵循哪些基本准则-为什么"><a href="#同步机构应遵循哪些基本准则-为什么" class="headerlink" title="同步机构应遵循哪些基本准则?为什么?"></a>同步机构应遵循哪些基本准则?为什么?</h3><p>a. 空闲让进.b. 忙则等待.c. 有限等待.d. 让权等待. </p>
+<h2 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h2><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h3 id="进程与线程对比"><a href="#进程与线程对比" class="headerlink" title="进程与线程对比"></a>进程与线程对比</h3><p>在OS中引入进程的目的是为了使多个程序并发执行，从而提高资源利用率和系统吞吐量，引入线程这是为了减少程序在并发执行时所付出的时空开销，使得OS具有更好的并发性。</p>
+<p>进程是可拥有资源的独立单位，同时进程也是一个可独立调度和分派的基本单位。</p>
+<h3 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h3><ul>
+<li>内核支持线程KST（Kernel Supported Threads）：所谓的内核支持线程 KST(Kernel Supported Threads)，也都同样是在内核的支持下运行的</li>
+<li>用户级线程ULU（User Level Threads）：仅存在于用户空间中，对于这种线程的创建、撤 消、线程之间的同步与通信等功能，都无须利用系统调用来实现</li>
+</ul>
+<h3 id="线程的同步和通信"><a href="#线程的同步和通信" class="headerlink" title="线程的同步和通信"></a>线程的同步和通信</h3><ul>
+<li>互斥锁（mutex）：互斥锁是一种比较简单的、用于实现线程间对资源互斥访问的机制。由于操作互斥锁 的时间和空间开销都较低，因而较适合于高频度使用的关键共享数据和程序段。</li>
+<li>条件变量：条件变量和互斥锁结合</li>
+<li>信号量机制 ：   <ul>
+<li>私用信号量(private samephore)</li>
+<li>公用信号量(public semaphort)</li>
+</ul>
+</li>
+</ul>
+<h1 id="三、处理机及调度与死锁"><a href="#三、处理机及调度与死锁" class="headerlink" title="三、处理机及调度与死锁"></a>三、处理机及调度与死锁</h1><p>死锁的必要条件</p>
+<ul>
+<li>互斥条件</li>
+<li>请求和保持</li>
+<li>不可抢占</li>
+<li>循环等待 </li>
+</ul>
+<p>处理死锁</p>
+<ul>
+<li>预防死锁：采用限制条件，破坏产生条件。（银行家算法）</li>
+<li>避免死锁：资源动态分配中，运用某种方法防止系统进入不安全状态。</li>
+<li>检测死锁：运行时检测死锁，然后采用适当的措施，把进程从死锁中解脱出来。</li>
+<li>解除死锁</li>
+</ul>
+<h2 id="处理机调度的层次"><a href="#处理机调度的层次" class="headerlink" title="处理机调度的层次"></a>处理机调度的层次</h2><h3 id="高级调度-High-Level-Scheduling"><a href="#高级调度-High-Level-Scheduling" class="headerlink" title="高级调度(High Level Scheduling)"></a>高级调度(High Level Scheduling)</h3><p><strong>高级调度</strong>又称为<strong>作业调度</strong>或<strong>长程调度</strong>(LongTerm Scheduling)，其 主要功能是根据某种算法，把外存上处于后备队列中的那些作业调入内存，也就是说，它的调度对象是作业。</p>
+<h3 id="低级调度（Low-Level-Scheduling）"><a href="#低级调度（Low-Level-Scheduling）" class="headerlink" title="低级调度（Low Level Scheduling）"></a>低级调度（Low Level Scheduling）</h3><p>通常也把低级调度称为进程调度或短程调度(ShortTerm Scheduling)，它所调度的对象是进程(或内核级线程)。进程调度是最基本的一种调度，在多 道批处理、分时和实时三种类型的 OS 中，都必须配置这级调度。</p>
+<p>低级调度的功能：</p>
+<ul>
+<li>保存处理机的现场信息</li>
+<li>按照某种算法选取进程</li>
+<li>把处理机分配给进程</li>
+</ul>
+<p>进程调度的三个基本机制</p>
+<ul>
+<li>排队器</li>
+<li>分派器</li>
+<li>上下文切换机制</li>
+</ul>
+<p>进程调度方式</p>
+<ul>
+<li>非抢占式(Nonpreemptive Mode)</li>
+<li>抢占方式(Preemptive Mode)</li>
+</ul>
+<h3 id="中级调度（Intermediate-Level-Scheduling）"><a href="#中级调度（Intermediate-Level-Scheduling）" class="headerlink" title="中级调度（Intermediate Level Scheduling）"></a>中级调度（Intermediate Level Scheduling）</h3><p>中级调度又称中程调度(Medium-Term Scheduling)。引入中级调度的主要目的是为了提高内存利用率和系统吞吐量。为此，应使那些暂时不能运行 的进程不再占用宝贵的内存资源，而将它们调至外存上去等待。</p>
+<p><strong>事务</strong>是一个原子执行的程序单元，即要么与其相关的所有操作都执行完，要么什么操作都不做。</p>
+<h1 id="四、存储器管理"><a href="#四、存储器管理" class="headerlink" title="四、存储器管理"></a>四、存储器管理</h1><h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><h2 id="存储器的多层结构"><a href="#存储器的多层结构" class="headerlink" title="存储器的多层结构"></a>存储器的多层结构</h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fsfnsaot5oj30gb0873z5.jpg" alt></p>
+<ul>
+<li>操作系统管理：寄存器、高速缓存、主存储器和磁盘缓存，掉电后存储的信息不再存在</li>
+<li>设备管理：底层的固定磁盘 和可移动存储介质，其存储信息被长期保存</li>
+</ul>
+<h2 id="主存储器和寄存器"><a href="#主存储器和寄存器" class="headerlink" title="主存储器和寄存器"></a>主存储器和寄存器</h2><ul>
+<li><strong>主存储器</strong>又称内存或主存，是计算机系统中的主要部件，用来保存进程运行时的程序和数据，也称为可执行存储器。由于主存储器访问速度远低于CPU执行指令的速度，为缓和这一矛盾，在计算机操作系统中引入了寄存器和高速缓存。</li>
+<li><strong>寄存器</strong>：寄存器具有与处理机相同的速度，因此对于寄存器的访问速度最快。</li>
+</ul>
+<h2 id="高速缓存和磁盘缓存"><a href="#高速缓存和磁盘缓存" class="headerlink" title="高速缓存和磁盘缓存"></a>高速缓存和磁盘缓存</h2><h3 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h3><p>介于寄存器和存储器之间的存储器，主要用于备份主存中较常用的数据，减少处理机对于主存储器的访问次数，从而大幅度提高程序执速度。</p>
+<p>将一些常用数据存储在高速缓存中是有效的，这一点可以通过程序执行的局部性原理解释。</p>
+<ul>
+<li><strong>局部性原理</strong>     ·是指CPU访问存储器时，无论是存取指令还是存取数据，所访问的存储单元都趋于聚集在一个较小的连续区域中。</li>
+</ul>
+<p>通常，进程的程序和数据是存放在主存储器中，每当使用时，被临时复制到一个速度较快的高速缓存中。当 CPU 访问一组特定信 息时，首先检查它是否在高速缓存中，如果已存在，可直接从中取出使用，以避免访问主存，否则，再从主存中读出信息。如大多数计算机有指令高速缓存，用来暂存下一条欲执行的指令，如果没有指令高速缓存，CPU 将会空等若干个周期，直到下一条指令从主存中 取出。由于高速缓存的速度越高价格也越贵，故有的计算机系统中设置了两级或多级高速缓存。紧靠内存的一级高速缓存的速度最高，而容量最小，二级高速缓存的容量稍大，速度也稍低。</p>
+<h3 id="磁盘缓存"><a href="#磁盘缓存" class="headerlink" title="磁盘缓存"></a>磁盘缓存</h3><p> 由于目前磁盘的 I/O 速度远低于对主存的访问速度，因此将频繁使用的一部分磁盘数据 和信息，暂时存放在磁盘缓存中，可减少访问磁盘的次数。</p>
+<p>要注意的是，磁盘缓存本身<strong>并不是</strong>一种实际存在的存储介质，它依托于固定磁盘，提供对主存储器存储空间的扩充，即利用主存中的存储空间，来暂存从磁盘中读出(或写入)的信息</p>
+<h2 id="程序的装入和链接"><a href="#程序的装入和链接" class="headerlink" title="程序的装入和链接"></a>程序的装入和链接</h2><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fsfpcm6z9kj30q90fxtcf.jpg" alt></p>
+<p>将一个模块装入内存的时候，有以下三种方式：</p>
+<ul>
+<li>1.绝对装入方式（Absolute Loading Mode）</li>
+<li>2.可重定位装入方式(Relocaltion Loading Mode)</li>
+<li>3.动态运行时装入方式(Dynamic Run-time Loading)</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fsfpeaphswj30g70nmgsn.jpg" alt></p>
+<p>动态运行时的装入程序在把装入模块装入内存后，并不立即把装入模块中的相对地址转换为绝对地址，而是把这种地址转换推迟到程序真正要执行时才进行。因此，装入内存 后的所有地址都仍是相对地址。为使地址转换不影响指令的执行速度，这种方式需要一个重定位寄存器的支持。</p>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>源程序经过编译后，可得到一组目标模块，再利用链接程序将这组目标模块链接，形 成装入模块。根据链接时间的不同，可把链接分成如下三种:</p>
+<ul>
+<li>1.静态链接。在程序运行之前，先将各目标模块及它们所需的库函数，链接成一个完 整的装配模块，以后不再拆开。我们把这种事先进行链接的方式称为静态链接方式。</li>
+<li>2.装入时动态链接。这是指将用户源程序编译后所得到的一组目标模块，在装入内存 时，采用边装入边链接的链接方式。</li>
+<li>3.运行时动态链接。这是指对某些目标模块的链接，是在程序执行中需要该(目标)模 块时，才对它进行的链接。</li>
+</ul>
+<h2 id="连续分配方式"><a href="#连续分配方式" class="headerlink" title="连续分配方式"></a>连续分配方式</h2><p>连续分配方式，是指为一个用户程序分配一个连续的内存空间。</p>
+<h3 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h3><p>这是最简单的一种存储管理方式，但只能用于单用户、单任务的操作系统中。采用这种存储管理方式时，可把内存分为系统区和用户区两部分，系统区仅提供给 OS 使用，通常是放在内存的低址部分;用户区是指除系统区以外的全部内存空间，提供给用户使用。</p>
+<h3 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h3><p>固定分区式分配是最简单的一种可运行多道程序的存储管理方式。这是将内存用户空间划分为若干个固定大小的区域，在每个分区中只装入一道作业，这样，把用户空间划分为几个分区，便允许有几道作业并发运行。当有一空闲分区时，便可以再从外存的后备作 业队列中选择一个适当大小的作业装入该分区，当该作业结束时，又可再从后备作业队列中找出另一作业调入该分区。</p>
+<p>划分分区的方法：<br>1.分区大小相等：缺点是缺乏灵活性<br>2.分区大小不等：可划分为小分区、中分区和大分区</p>
+<h3 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h3><p>为了实现分区分配，系统中必须配置相应的数据结构，用来描述空闲分区和已分配分区的情况，为分配提供依据。</p>
+<p>数据结构</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fsfq1r5kvjj30oq0aoad5.jpg" alt></p>
+<p><strong>分区分配算法</strong> 为把一个新作业装入内存，须按照一定的分配算法，从空闲分区表或空闲分区链中选出一分区分配给该作业</p>
+<ul>
+<li>1.首次适应算法(first fit)</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fsfqgmd0k5j30ox070gom.jpg" alt></p>
+<ul>
+<li>2.循环首次适应算法(next fit)</li>
+</ul>
+<p>在为进程分配内存空间时，不再是每次都从链首开始查找，而是从上次找到的空闲分区的下一个空闲分区开始查找，直至找到一个能满足要求的空闲分区，从中划出一块与请求大小相等的内存空间分配给作业。</p>
+<ul>
+<li>3.最佳适应算法(best fit)</li>
+</ul>
+<p>所谓“最佳”是指每次为作业分配内存时，总是把能满足要求、又是最小的空闲分区 分配给作业，避免“大材小用”。</p>
+<ul>
+<li>4.最坏适应算法(worst fit)</li>
+<li>5.快速适应算法(quick fit)</li>
+</ul>
+<h3 id="可重定位分配"><a href="#可重定位分配" class="headerlink" title="可重定位分配"></a>可重定位分配</h3><h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p>为什么引入虚存：内存容量不够大，物理增加内存系统程序成本大。</p>
+<p>所谓虚拟存储器，是指具有请求调入和置换功能，能从逻辑上对内存容量加以扩充的存储器结构。其<strong>逻辑容量</strong>是由内存容量和外存容量纸盒所决定，运行速度接近于内存，每位的成本接近外存。</p>
+<p>虚拟存储器具有以下特性</p>
+<ul>
+<li>多次性：内存中的程序和数据无需一次性装入。\</li>
+<li>对换性：一个作业的程序和数据无需常驻内存。</li>
+<li>虚拟性：从逻辑上扩充内存容量，是用户看到的内存容量远大于实际。</li>
+</ul>
+<h1 id="五、设备管理"><a href="#五、设备管理" class="headerlink" title="五、设备管理"></a>五、设备管理</h1><h1 id="六、文件管理"><a href="#六、文件管理" class="headerlink" title="六、文件管理"></a>六、文件管理</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>《计算机操作系统》 第四版 课本及习题</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">推荐阅读</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018-07-11/autumn-preparations/" rel="bookmark">秋招准备-规划篇</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018-08-07/interview-preparation-02/" rel="bookmark">机器学习秋招面试准备-02</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018-10-26/my-first-full-time-job/" rel="bookmark">拼多多算法工程师（SSP），秋招结束！</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="曹真 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>曹真</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://hellogod.cn/2018-06-18/Operating-System-Concepts-notes/" title="操作系统原理笔记">https://hellogod.cn/2018-06-18/Operating-System-Concepts-notes/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+          
+            <a href="/tags/秋招/" rel="tag"># 秋招</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-06-13/common-developer-tools/" rel="next" title="开发常用工具备忘录（持续更新）">
+                <i class="fa fa-chevron-left"></i> 开发常用工具备忘录（持续更新）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-06-28/black-day/" rel="prev" title="乌云乌云快走开">
+                乌云乌云快走开 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg" alt="曹真">
+            
+              <p class="site-author-name" itemprop="name">曹真</p>
+              <div class="site-description motion-element" itemprop="description">微信公众号：一时博客</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">158</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/caozhen233" title="zhihu &rarr; https://www.zhihu.com/people/caozhen233" rel="noopener" target="_blank"><i class="fa fa-fw fa-book"></i>zhihu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.linkedin.com/in/%E7%9C%9F-%E6%9B%B9-985694141/" title="linkedin &rarr; https://www.linkedin.com/in/%E7%9C%9F-%E6%9B%B9-985694141/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>linkedin</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、操作系统引论"><span class="nav-text">一、操作系统引论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统的主要功能"><span class="nav-text">操作系统的主要功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理机管理功能"><span class="nav-text">处理机管理功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统的发展"><span class="nav-text">操作系统的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无操作系统"><span class="nav-text">无操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储器管理"><span class="nav-text">存储器管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设备管理和文件管理。"><span class="nav-text">设备管理和文件管理。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、进程管理"><span class="nav-text">二、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的基本概念"><span class="nav-text">进程的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程与程序对比"><span class="nav-text">进程与程序对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序执行"><span class="nav-text">顺序执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发执行"><span class="nav-text">并发执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程控制"><span class="nav-text">进程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在进行进程切换时，所要保存的处理机状态信息主要有哪些"><span class="nav-text">在进行进程切换时，所要保存的处理机状态信息主要有哪些?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#试说明引起进程创建的主要事件"><span class="nav-text">试说明引起进程创建的主要事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#试说明引起进程撤消的主要事件"><span class="nav-text">试说明引起进程撤消的主要事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在创建一个进程时，需完成的主要工作是什么"><span class="nav-text">在创建一个进程时，需完成的主要工作是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在撤消一个进程时，需完成的主要工作是什么"><span class="nav-text">在撤消一个进程时，需完成的主要工作是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#试说明引起进程阻塞或被唤醒的主要事件是什么"><span class="nav-text">试说明引起进程阻塞或被唤醒的主要事件是什么?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程同步"><span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步机构应遵循哪些基本准则-为什么"><span class="nav-text">同步机构应遵循哪些基本准则?为什么?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程通信"><span class="nav-text">进程通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程与线程对比"><span class="nav-text">进程与线程对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的实现方式"><span class="nav-text">线程的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的同步和通信"><span class="nav-text">线程的同步和通信</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、处理机及调度与死锁"><span class="nav-text">三、处理机及调度与死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#处理机调度的层次"><span class="nav-text">处理机调度的层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高级调度-High-Level-Scheduling"><span class="nav-text">高级调度(High Level Scheduling)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#低级调度（Low-Level-Scheduling）"><span class="nav-text">低级调度（Low Level Scheduling）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中级调度（Intermediate-Level-Scheduling）"><span class="nav-text">中级调度（Intermediate Level Scheduling）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、存储器管理"><span class="nav-text">四、存储器管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储器的层次结构"><span class="nav-text">存储器的层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储器的多层结构"><span class="nav-text">存储器的多层结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主存储器和寄存器"><span class="nav-text">主存储器和寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高速缓存和磁盘缓存"><span class="nav-text">高速缓存和磁盘缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高速缓存"><span class="nav-text">高速缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘缓存"><span class="nav-text">磁盘缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的装入和链接"><span class="nav-text">程序的装入和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-text">链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续分配方式"><span class="nav-text">连续分配方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一连续分配"><span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定分区分配"><span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态分区分配"><span class="nav-text">动态分区分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可重定位分配"><span class="nav-text">可重定位分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟存储器"><span class="nav-text">虚拟存储器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、设备管理"><span class="nav-text">五、设备管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、文件管理"><span class="nav-text">六、文件管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="https://beian.miit.gov.cn/#/Integrated/index" rel="noopener" target="_blank">豫ICP备17006732号-1 </a>&copy; 2017 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹真</span>
+
+  
+
+  
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://hellogod.cn/2018-06-18/Operating-System-Concepts-notes/";
+    this.page.identifier = "2018-06-18/Operating-System-Concepts-notes/";
+    this.page.title = '操作系统原理笔记';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hellogod-cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<style>
+  .copy-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+    
+    user-select: none;
+    outline: 0;
+  }
+
+  .highlight-wrap .copy-btn {
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    
+      right: 4px;
+      top: 8px;
+    
+  }
+
+  .highlight-wrap:hover .copy-btn,
+  .highlight-wrap .copy-btn:focus {
+    opacity: 1;
+  }
+
+  .highlight-wrap {
+    position: relative;
+  }
+</style>
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+</body>
+</html>
