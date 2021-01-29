@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2021开年大吉]]></title>
+    <url>%2F2021-01-30%2F2021-first-blog%2F</url>
+    <content type="text"><![CDATA[如题 祝大家新年快乐！]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[直面现实]]></title>
     <url>%2F2020-10-03%2Fface-a-fact%2F</url>
     <content type="text"><![CDATA[很久没有写东西，原因有很多，有些东西记在了日记本，有些情绪撒在了微博，有些积攒起来。 不吐不快。 忘记和释怀是一件很难的事情，越是投入的多，越是难以做到。沉浸在对过去的想象和回忆，是一种逃避。 还是毕业那段时间，经历了一些变故，人在处理这些情绪的时候会很自觉的把东西联系到一起，打包处理。这些东西会堵住你的血管，让你的身体开始出现各种问题。如果你对着一切有意识还好说，倘若一直处于这种无状态的情况，就很难说。 工作之后，时间会变得很快，一眨眼，又年长了一岁，这时候已经没有了当初长大一岁的欢愉。 工作之后的自信，更难了，现实褪去包装，摆在你面前的是钢筋水泥，你要自己通过想象将其替换为别墅大厦。有时候你甚至要通过自欺来恢复自信。又或者是，接受平凡而普通的自己，开始好好扮演自己的角色。]]></content>
@@ -643,8 +654,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>面试</tag>
+        <tag>机器学习</tag>
         <tag>方法论</tag>
       </tags>
   </entry>
@@ -736,8 +747,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>面试</tag>
+        <tag>机器学习</tag>
         <tag>秋招</tag>
       </tags>
   </entry>
@@ -762,8 +773,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>面试</tag>
+        <tag>深度学习</tag>
         <tag>intel</tag>
       </tags>
   </entry>
@@ -775,9 +786,9 @@
         <category>面试</category>
       </categories>
       <tags>
+        <tag>面试</tag>
         <tag>深度学习</tag>
         <tag>机器学习</tag>
-        <tag>面试</tag>
         <tag>数据挖掘</tag>
       </tags>
   </entry>
@@ -789,8 +800,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>面试</tag>
+        <tag>机器学习</tag>
         <tag>秋招</tag>
         <tag>回顾</tag>
       </tags>
@@ -893,8 +904,8 @@
         <category>开发笔记</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>博客</tag>
+        <tag>hexo</tag>
         <tag>优化</tag>
         <tag>折腾</tag>
       </tags>
@@ -919,8 +930,8 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>字节跳动</tag>
         <tag>今日头条</tag>
+        <tag>字节跳动</tag>
         <tag>价值观</tag>
         <tag>体验</tag>
       </tags>
