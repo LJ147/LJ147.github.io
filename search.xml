@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[2021开年大吉]]></title>
     <url>%2F2021-01-30%2F2021-first-blog%2F</url>
-    <content type="text"><![CDATA[如题 祝大家新年快乐！]]></content>
+    <content type="text"><![CDATA[如题 祝大家新年快乐！ 从同事那里收了一个二手mbp放在家里日常码字用，目前看体验还不错，没啥大毛病，缺点就是电池不太行。 之前写的东西，自己都很少回头去看，回顾是一件很羞耻的事情，而且奇怪的是，明明是自己写的东西，事后再来看的时候，也许并不记得，当时的状态自然是找不回来，这也算是记录的妙处之一，尽可能的保留记忆。]]></content>
       <categories>
         <category>日常</category>
       </categories>
@@ -198,8 +198,8 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>特征工程</tag>
         <tag>CTR</tag>
+        <tag>特征工程</tag>
         <tag>工业界</tag>
       </tags>
   </entry>
@@ -225,8 +225,8 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>推荐系统</tag>
         <tag>工作</tag>
+        <tag>推荐系统</tag>
       </tags>
   </entry>
   <entry>
@@ -284,8 +284,8 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>推荐系统</tag>
         <tag>未完待续</tag>
+        <tag>推荐系统</tag>
         <tag>资料</tag>
       </tags>
   </entry>
@@ -322,9 +322,9 @@
         <category>大学总结</category>
       </categories>
       <tags>
-        <tag>故事</tag>
         <tag>未完待续</tag>
         <tag>朋友</tag>
+        <tag>故事</tag>
       </tags>
   </entry>
   <entry>
@@ -497,8 +497,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
@@ -523,9 +523,9 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>强化学习</tag>
         <tag>推荐系统</tag>
         <tag>综述</tag>
+        <tag>强化学习</tag>
       </tags>
   </entry>
   <entry>
@@ -548,9 +548,9 @@
         <category>年度总结</category>
       </categories>
       <tags>
+        <tag>总结</tag>
         <tag>年度总结</tag>
         <tag>实习</tag>
-        <tag>总结</tag>
         <tag>恋爱</tag>
         <tag>未完待续</tag>
       </tags>
@@ -629,8 +629,8 @@
       </categories>
       <tags>
         <tag>日常</tag>
-        <tag>熬夜</tag>
         <tag>自制力</tag>
+        <tag>熬夜</tag>
       </tags>
   </entry>
   <entry>
@@ -641,8 +641,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>日常</tag>
         <tag>阅读</tag>
+        <tag>日常</tag>
         <tag>写作</tag>
       </tags>
   </entry>
@@ -667,8 +667,8 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>面试</tag>
         <tag>秋招</tag>
+        <tag>面试</tag>
         <tag>拼多多</tag>
       </tags>
   </entry>
@@ -680,9 +680,9 @@
         <category>学习计划</category>
       </categories>
       <tags>
-        <tag>面试</tag>
         <tag>学习</tag>
         <tag>分享</tag>
+        <tag>面试</tag>
         <tag>方法论</tag>
       </tags>
   </entry>
@@ -694,10 +694,10 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>实习</tag>
-        <tag>微信支付</tag>
         <tag>字节跳动</tag>
+        <tag>机器学习</tag>
+        <tag>微信支付</tag>
       </tags>
   </entry>
   <entry>
@@ -747,9 +747,9 @@
         <category>面试</category>
       </categories>
       <tags>
+        <tag>秋招</tag>
         <tag>面试</tag>
         <tag>机器学习</tag>
-        <tag>秋招</tag>
       </tags>
   </entry>
   <entry>
@@ -787,8 +787,8 @@
       </categories>
       <tags>
         <tag>面试</tag>
-        <tag>深度学习</tag>
         <tag>机器学习</tag>
+        <tag>深度学习</tag>
         <tag>数据挖掘</tag>
       </tags>
   </entry>
@@ -800,10 +800,10 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>面试</tag>
-        <tag>机器学习</tag>
         <tag>秋招</tag>
         <tag>回顾</tag>
+        <tag>面试</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -891,8 +891,8 @@
         <category>开发笔记</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>工具</tag>
+        <tag>笔记</tag>
         <tag>开发</tag>
       </tags>
   </entry>
@@ -904,8 +904,8 @@
         <category>开发笔记</category>
       </categories>
       <tags>
-        <tag>博客</tag>
         <tag>hexo</tag>
+        <tag>博客</tag>
         <tag>优化</tag>
         <tag>折腾</tag>
       </tags>
@@ -930,8 +930,8 @@
         <category>工作</category>
       </categories>
       <tags>
-        <tag>今日头条</tag>
         <tag>字节跳动</tag>
+        <tag>今日头条</tag>
         <tag>价值观</tag>
         <tag>体验</tag>
       </tags>
@@ -994,9 +994,9 @@
         <category>面试</category>
       </categories>
       <tags>
+        <tag>腾讯</tag>
         <tag>面经</tag>
         <tag>微信支付</tag>
-        <tag>腾讯</tag>
       </tags>
   </entry>
   <entry>
@@ -1091,8 +1091,8 @@
       </categories>
       <tags>
         <tag>面试</tag>
-        <tag>数据挖掘</tag>
         <tag>今日头条</tag>
+        <tag>数据挖掘</tag>
         <tag>花旗杯</tag>
       </tags>
   </entry>
@@ -1128,10 +1128,10 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>面经</tag>
-        <tag>算法</tag>
         <tag>百度</tag>
         <tag>小米</tag>
+        <tag>面经</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1216,8 +1216,8 @@
         <category>深度学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1291,8 +1291,8 @@
         <category>学习计划</category>
       </categories>
       <tags>
-        <tag>计划</tag>
         <tag>目标</tag>
+        <tag>计划</tag>
         <tag>学业</tag>
       </tags>
   </entry>
@@ -1314,10 +1314,10 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>机器学习</tag>
-        <tag>计划</tag>
         <tag>算法</tag>
+        <tag>深度学习</tag>
+        <tag>计划</tag>
       </tags>
   </entry>
   <entry>

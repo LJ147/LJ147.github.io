@@ -23,11 +23,11 @@
     <published>2021-01-29T17:27:03.000Z</published>
     <updated>2021-01-29T17:27:03.000Z</updated>
     
-    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><p>祝大家新年快乐！</p>]]></content>
+    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><p>祝大家新年快乐！</p><p>从同事那里收了一个二手mbp放在家里日常码字用，目前看体验还不错，没啥大毛病，缺点就是电池不太行。</p><p>之前写的东西，自己都很少回头去看，回顾是一件很羞耻的事情，而且奇怪的是，明明是自己写的东西，事后再来看的时候，也许并不记得，当时的状态自然是找不回来，这也算是记录的妙处之一，尽可能的保留记忆。</p>]]></content>
     
     <summary type="html">
     
-      修复了一些网站的bug，顺便恢复更新，主要更新在个人博客：一时博客
+      修复了一些网站的bug，顺便恢复更新，主要更新在微信公众号：一时博客
     
     </summary>
     
@@ -431,9 +431,9 @@
       <category term="工作" scheme="https://hellogod.cn/categories/%E5%B7%A5%E4%BD%9C/"/>
     
     
-      <category term="特征工程" scheme="https://hellogod.cn/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
-    
       <category term="CTR" scheme="https://hellogod.cn/tags/CTR/"/>
+    
+      <category term="特征工程" scheme="https://hellogod.cn/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
     
       <category term="工业界" scheme="https://hellogod.cn/tags/%E5%B7%A5%E4%B8%9A%E7%95%8C/"/>
     
@@ -485,9 +485,9 @@
       <category term="工作" scheme="https://hellogod.cn/categories/%E5%B7%A5%E4%BD%9C/"/>
     
     
-      <category term="推荐系统" scheme="https://hellogod.cn/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
-    
       <category term="工作" scheme="https://hellogod.cn/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+      <category term="推荐系统" scheme="https://hellogod.cn/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
