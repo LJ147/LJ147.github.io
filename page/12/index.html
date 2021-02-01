@@ -325,7 +325,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">120</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">121</span></a>
 
   </li>
 
@@ -399,6 +399,211 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-08-02/解决了一个困扰三天的bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-08-02/解决了一个困扰三天的bug/" class="post-title-link" itemprop="url">解决了一个困扰三天的bug</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-02 02:25:23" itemprop="dateCreated datePublished" datetime="2017-08-02T02:25:23+08:00">2017-08-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-30 01:17:27" itemprop="dateModified" datetime="2021-01-30T01:17:27+08:00">2021-01-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">Spring Boot中 hibernate 延迟加载 | 懒加载（lazy loading）造成序列化失败</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>描述：Spring Boot中 hibernate 延迟加载 | 懒加载（lazy loading）造成序列化失败</p>
+<p>明日填坑</p>
+<p>过了好几天才来填，很难过，因为当时解决的时候没有立即记录，现在我对着电脑发呆，想了十分钟记不起这个bug到底是什么。</p>
+<p>可啪。</p>
+<p>于是决定记录新遇到的一个问题。 </p>
+<h1 id="一、Spring-hibernate-懒实例化"><a href="#一、Spring-hibernate-懒实例化" class="headerlink" title="一、Spring hibernate 懒实例化"></a>一、Spring hibernate 懒实例化</h1><p>Spring Boot中 <code>hibernate</code> 延迟加载 | 懒加载（lazy loading）造成序列化失败</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>背景很简单，一个家长（Guardian）对应多个孩子（Student）</p>
+<p>首先在家长bean里定义 <code>List&lt;Student&gt; students</code> ，接着通过guardian对象的<code>guardian.getStudents()</code>获取对应的学生对象，按理说没有任何问题</p>
+<p>Guardian.java 家长bean</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"Guardian"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Guardian</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OneToMany</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Student&gt; students; <span class="comment">//学生列表</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> GuardianController.java  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"孩子列表"</span>)</span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/children"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  List&lt;Student&gt; <span class="title">children</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">        Guardian guardian = userService.currentGuardian(request);</span><br><span class="line">        <span class="keyword">return</span> guardian.getStudents();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在IDEA本地运行的时候接口正常:</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uyitqclj30un0j5goh.jpg" alt="7FE3731E-DE7B-49BB-A644-941D10D14212"></p>
+</li>
+</ul>
+<ul>
+<li>但是奇怪的是部署到服务器Tomcat上之后接口报错：</li>
+<li><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3uyj9o1mj30ui0dxtae.jpg" alt></li>
+</ul>
+<p>输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;timestamp&quot;: 1501826190599,</span><br><span class="line">    &quot;status&quot;: 500,</span><br><span class="line">    &quot;error&quot;: &quot;Internal Server Error&quot;,</span><br><span class="line">    &quot;exception&quot;: &quot;org.springframework.http.converter.HttpMessageNotWritableException&quot;,</span><br><span class="line">    &quot;message&quot;: &quot;Could not write content: could not extract ResultSet (through reference chain: org.sklse.lab.bean.ResultModel[\&quot;content\&quot;]-&gt;org.hibernate.collection.internal.PersistentBag[0]-&gt;org.sklse.lab.bean.Student[\&quot;submittedHomeworks\&quot;]); nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not extract ResultSet (through reference chain: org.sklse.lab.bean.ResultModel[\&quot;content\&quot;]-&gt;org.hibernate.collection.internal.PersistentBag[0]-&gt;org.sklse.lab.bean.Student[\&quot;submittedHomeworks\&quot;])&quot;,</span><br><span class="line">    &quot;path&quot;: &quot;/edu/guardian/children&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>一番debug之后很是头疼，后来请教了一位长者，指出可能是<code>懒实例化</code>的问题，于是查找到<a href="http://www.jianshu.com/p/c676fd86a219" target="_blank" rel="noopener">解决方案</a>，在Spring Boot的<code>application.properties</code>配置项添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true</span><br></pre></td></tr></table></figure>
+<p>于是问题顺利解决</p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><blockquote>
+<p>这个例子当中的<code>guardian.getStudents()</code>是延迟加载的，最开始的studentList其实放的是 Hibernate 的 <a href="https://docs.jboss.org/hibernate/orm/3.2/api/org/hibernate/collection/PersistentBag.html" target="_blank" rel="noopener">PersistentBag</a> ，这个对象是不可以序列化的。</p>
+</blockquote>
+<p> 待补充细节</p>
+<h1 id="二、Tomcat缓存问题"><a href="#二、Tomcat缓存问题" class="headerlink" title="二、Tomcat缓存问题"></a>二、Tomcat缓存问题</h1><p>本文链接：<a href="http://hellogod.cn/2017-08-02/解决了一个困扰三天的bug/">http://hellogod.cn/2017-08-02/解决了一个困扰三天的bug/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2113,198 +2318,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-03-06/iOS最佳入门教程【斯坦福大学CS193P课程】学习笔记（1）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹真">
-      <meta itemprop="description" content="微信公众号：一时博客">
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一时博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017-03-06/iOS最佳入门教程【斯坦福大学CS193P课程】学习笔记（1）/" class="post-title-link" itemprop="url">iOS最佳入门教程【斯坦福大学CS193P课程】学习笔记（1）</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-03-06 12:25:31" itemprop="dateCreated datePublished" datetime="2017-03-06T12:25:31+08:00">2017-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2017-07-26 12:25:31" itemprop="dateModified" datetime="2017-07-26T12:25:31+08:00">2017-07-26</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-            <div class="post-description">【斯坦福大学CS193P课程】的全部代码 以及学习中遇到的问题</div>
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>斯坦福大学CS193P课程的全部代码以及学习中遇到的问题</p>
-<h2 id="本系列文章主要内容："><a href="#本系列文章主要内容：" class="headerlink" title="本系列文章主要内容："></a>本系列文章主要内容：</h2><ul>
-<li>【斯坦福大学CS193P课程】的全部代码（分章节）</li>
-<li>记录学习此课程中遇到的一些问题</li>
-<li>分享该课程的高清视频&amp;pdf资源（文尾）</li>
-</ul>
-<hr>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017-03-06/iOS最佳入门教程【斯坦福大学CS193P课程】学习笔记（1）/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2348,7 +2366,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">120</span>
+                    <span class="site-state-item-count">121</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
