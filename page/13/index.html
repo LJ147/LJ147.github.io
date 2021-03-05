@@ -287,7 +287,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">195</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">197</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">32</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">34</span></a>
 
   </li>
         
@@ -325,7 +325,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">123</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">126</span></a>
 
   </li>
 
@@ -399,6 +399,552 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-06-24/stack-and-heap-in-iOS-development/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-06-24/stack-and-heap-in-iOS-development/" class="post-title-link" itemprop="url">浅析iOS中的堆与栈</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-24 02:24:00" itemprop="dateCreated datePublished" datetime="2017-06-24T02:24:00+08:00">2017-06-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-09-21 02:18:16" itemprop="dateModified" datetime="2017-09-21T02:18:16+08:00">2017-09-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学科笔记/" itemprop="url" rel="index"><span itemprop="name">学科笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本文永久更新地址：<a href="http://hellogod.cn/stack-and-heap-in-iOS-development/">http://hellogod.cn/stack-and-heap-in-iOS-development/</a></p>
+<p>学习Objective-C的时候，很明显的一点感受就是这门语言和C++非常接近（这不废话吗QAQ）。虽然苹果爸爸对于底层的保护做的很好（封闭），让我们对于底层实现方式了解的不是很透彻，但还是能了解一二，相信对于之后的深入开发也很有帮助。</p>
+<p>下面是之前做的一个关于iOS中堆栈的小演示。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uxt2687j30yg0nrn2n.jpg" alt="Page1"><br><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uxu0je3j30yg0nr78y.jpg" alt="Version 1"><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3uxuh7xgj30yg0nrgqh.jpg" alt="Version 2"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3uxvekj9j30yg0nrn21.jpg" alt="Code"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3uxwd35tj30yg0nr0y7.jpg" alt="Heap VS Stack"><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3uxxas55j30yg0nrgtm.jpg" alt="memory management"></p>
+<p>顺便安利一发之前授课老师安利的小册子：<a href="https://github.com/NapleC/Coding-Developer-Book/blob/master/C语言/林锐·高质量C%20%20编程指南.pdf" target="_blank" rel="noopener">《高质量 C++/C 编程指南》</a>，可谓短小精悍。</p>
+<p>主要讲解了C++中的一些核心问题，一些经常容易出现错误但又经常被忽略的地方。</p>
+<p>十分推荐下载PDF反复阅读，同时请注意版权问题。<br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3uxy8qu5j30yg0syn0a.jpg" alt="高质量 C++/C 编程指南"><br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-06-24/stack-and-heap-in-iOS-development/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-06-23/Objective-C基础知识点总结（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-06-23/Objective-C基础知识点总结（一）/" class="post-title-link" itemprop="url">Objective-C基础知识点总结（一）</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-23 04:26:45" itemprop="dateCreated datePublished" datetime="2017-06-23T04:26:45+08:00">2017-06-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-30 01:17:27" itemprop="dateModified" datetime="2021-01-30T01:17:27+08:00">2021-01-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>长文，建议跳跃选择性阅读，大约10min可以读完全文。<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-06-23/Objective-C基础知识点总结（一）/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-05-14/【02】《UNIX高级环境编程》全书精华集锦/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-05-14/【02】《UNIX高级环境编程》全书精华集锦/" class="post-title-link" itemprop="url">02-《UNIX高级环境编程》全书精华集锦</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-14 04:26:15" itemprop="dateCreated datePublished" datetime="2017-05-14T04:26:15+08:00">2017-05-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-23 01:41:38" itemprop="dateModified" datetime="2018-06-23T01:41:38+08:00">2018-06-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学科笔记/" itemprop="url" rel="index"><span itemprop="name">学科笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>众所周知，Linux系列知识极其重要，公司面试、实际开发都需要用到。最近看了一些资料之后，发觉自己很多地方没有掌握到位，于是开始逐一查阅，顺便整理了这个懒人版供大家参考。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3v0nm1zlj30e106yaaf.jpg" alt></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-05-14/【02】《UNIX高级环境编程》全书精华集锦/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1071,7 +1617,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">123</span>
+                    <span class="site-state-item-count">126</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1152,7 +1698,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1559,7 +2109,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">161</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">164</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

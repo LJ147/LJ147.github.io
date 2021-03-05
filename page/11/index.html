@@ -287,7 +287,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">195</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">197</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">32</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">34</span></a>
 
   </li>
         
@@ -325,7 +325,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">123</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">126</span></a>
 
   </li>
 
@@ -399,6 +399,554 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-12-17/two-1080ti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-12-17/two-1080ti/" class="post-title-link" itemprop="url">为什么深度学习需要使用GPU？</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-17 15:38:50" itemprop="dateCreated datePublished" datetime="2017-12-17T15:38:50+08:00">2017-12-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-27 13:15:42" itemprop="dateModified" datetime="2018-12-27T13:15:42+08:00">2018-12-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">为什么在部分机器学习中训练模型时使用GPU的效果比CPU更好？</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>总算是有了一个初级炼丹炉吧，虽然是实验室的233</p>
+<p> <img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3v0m75k5j31kw0nnjzi.jpg" alt></p>
+<p>希望自己能够善用炼丹炉，早日成为一名合格的炼丹师！</p>
+<p>后面针对GPU来整理一下相关的资料。</p>
+<p>来填之前挖的坑了。</p>
+<h1 id="如何选购GPU"><a href="#如何选购GPU" class="headerlink" title="如何选购GPU"></a>如何选购GPU</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fyl8b7t9glj31560ouady.jpg" alt></p>
+<p>其实关于GPU，之前李沐有很好的科普帖： <a href="https://zh.diveintodeeplearning.org/chapter_appendix/buy-gpu.html" target="_blank" rel="noopener">GPU 购买指南</a></p>
+<p>这里摘录一部分：[1]</p>
+<p>GPU 的性能主要由以下三个参数构成：</p>
+<p>计算能力。通常我们关心的是 32 位浮点计算能力。16 位浮点训练也开始流行，如果只做预测的话也可以用 8 位整数。</p>
+<ul>
+<li>内存大小。当模型越大，或者训练时的批量越大时，所需要的 GPU 内存就越多。</li>
+<li>内存带宽。只有当内存带宽足够时才能充分发挥计算能力。</li>
+<li>对于大部分用户来说，只要考虑计算能力就可以了。GPU 内存尽量不小于 4GB。但如果 GPU 要同时显示图形界面，那么推荐的内存大小至少为 6GB。内存带宽通常相对固定，选择空间较小。</li>
+</ul>
+<p>李沐： “1050ti，1080ti和titan xp性价比都不错”</p>
+<h1 id="为什么深度学习要用GPU"><a href="#为什么深度学习要用GPU" class="headerlink" title="为什么深度学习要用GPU"></a>为什么深度学习要用GPU</h1><p>1.多核并行：GPU最早是用于图形渲染、计算，多核并行提高渲染速度，NVIDIA有一个非常形象生动的视频：</p>
+<embed src="http://player.youku.com/player.php/sid/XNjY3MTY4NjAw/v.swf" allowfullscreen="true" quality="high" width="600" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+
+
+<p>2.计算类型简单统一：CPU和GPU之所以大不相同，是由于其设计目标的不同，它们分别针对了两种不同的应用场景。CPU需要很强的通用性来处理各种不同的数据类型，同时又要逻辑判断又会引入大量的分支跳转和中断的处理。这些都使得CPU的内部结构异常复杂。而GPU面对的则是类型高度统一的、相互无依赖的大规模数据和不需要被打断的纯净的计算环境。[4] </p>
+<p>可参考下图的设计理念：[5]</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyl8lflh0bj30k008e0tx.jpg" alt></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyl8ltzdrpj30k008aabg.jpg" alt></p>
+<p>部分机器学习算法，比如遗传算法，神经网络等，也具有这种分布式及局部独立的特性（e.g.比如说一条神经网络中的链路跟另一条链路之间是同时进行计算，而且相互之间没有依赖的），这种情况下可以采用大量小核心同时运算的方式来加快运算速度。[6]</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-12-17/two-1080ti/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-12-14/google-developer-days/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-12-14/google-developer-days/" class="post-title-link" itemprop="url">谷歌开发者大会小记</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-14 01:52:12" itemprop="dateCreated datePublished" datetime="2017-12-14T01:52:12+08:00">2017-12-14</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>说几点体会：</p>
+<ul>
+<li>你竟然讲不好英文？<br>和一些外籍工作人员沟通的时候很是费力，口语不好是硬伤，要加油啊233</li>
+</ul>
+<p>接下来就是无脑堆图。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3v0toy00j31hc0u0qb6.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3v0umuezj30ku0fntbd.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3v0w5i69j31kw23v4qp.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3v0yh46lj31kw23v4qp.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3v0zucu1j31kw23v7wh.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v11l7ypj31kw16onaz.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v12mbafj31kw16o4ej.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v16e8jnj31kw23vhdt.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3v17trkwj31kw23ve81.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v19ngxoj31kw23v1kx.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs3v1emf4hj31kw2t5e81.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs3v1g6gwqj31kw16o7oe.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v1k0gd9j31kw23v4qp.jpg" alt="图片发自简书App"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3v1msdbkj31kw16o7rt.jpg" alt="图片发自简书App"></p>
+<p>感谢武汉GDG的赞助</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-12-05/The-happiest-tends-to-come-from-the-most-difficult-times/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曹真">
+      <meta itemprop="description" content="微信公众号：一时博客">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一时博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017-12-05/The-happiest-tends-to-come-from-the-most-difficult-times/" class="post-title-link" itemprop="url">无端回忆</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-05 21:31:39" itemprop="dateCreated datePublished" datetime="2017-12-05T21:31:39+08:00">2017-12-05</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在基地睡了一会，醒来之后感觉脑子不是很清醒，出去买了瓶雪碧，路上在冷风中打开猛灌一口的时候（澳门屌丝上线了），突然就想到了高中时代。</p>
+<p>总会觉得，那时候是受了点苦的。</p>
+<p>但是人总会苦中作乐嘛，最苦的那时候，做出来的一些乐 ———— 深夜火锅+雪碧，让我怀念到现在。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017-12-05/The-happiest-tends-to-come-from-the-most-difficult-times/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1627,536 +2175,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-09-17/macOS-tips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹真">
-      <meta itemprop="description" content="微信公众号：一时博客">
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一时博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017-09-17/macOS-tips/" class="post-title-link" itemprop="url">macOS上的好用软件和使用Tips</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-09-17 01:15:00" itemprop="dateCreated datePublished" datetime="2017-09-17T01:15:00+08:00">2017-09-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-16 09:38:53" itemprop="dateModified" datetime="2019-06-16T09:38:53+08:00">2019-06-16</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发笔记/" itemprop="url" rel="index"><span itemprop="name">开发笔记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs3v2tuvzqj31g70th7ar.jpg" alt><br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017-09-17/macOS-tips/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-09-04/new-term-new-goals/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹真">
-      <meta itemprop="description" content="微信公众号：一时博客">
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一时博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017-09-04/new-term-new-goals/" class="post-title-link" itemprop="url">新学期的目标和计划</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-09-04 03:33:44" itemprop="dateCreated datePublished" datetime="2017-09-04T03:33:44+08:00">2017-09-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-20 17:10:11" itemprop="dateModified" datetime="2018-06-20T17:10:11+08:00">2018-06-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习计划/" itemprop="url" rel="index"><span itemprop="name">学习计划</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-            <div class="post-description">新学期的一些计划，又称flag</div>
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>新学期的目标和计划</p>
-<h1 id="目标-amp-计划"><a href="#目标-amp-计划" class="headerlink" title="目标 &amp; 计划"></a>目标 &amp; 计划</h1><ul>
-<li style="list-style: none"><input type="checkbox"> 深度学习、CV 方便有一个能拿的出手的项目</li>
-<li style="list-style: none"><input type="checkbox"> 争取发一篇 paper(捂脸🤦‍♀️)</li>
-<li style="list-style: none"><input type="checkbox" checked> 数据结构和算法再认真刷一刷</li>
-<li style="list-style: none"><input type="checkbox" checked> 经常更新博客、Github 上保持 push</li>
-<li style="list-style: none"><input type="checkbox" checked> 遇到好的想法就立即去实现！</li>
-<li style="list-style: none"><input type="checkbox"> 试着提高专业课到课率</li>
-<li style="list-style: none"><input type="checkbox" checked> 和以前一样，骑着车去听一听有趣的课，去别的学校转一转</li>
-<li style="list-style: none"><input type="checkbox" checked> 攒一点钱</li>
-<li style="list-style: none"><input type="checkbox" checked> 稳重一点，不要总是冒冒失失</li>
-<li style="list-style: none"><input type="checkbox" checked> 哦对，提高英雄联盟段位，练一练补刀，看一看攻略。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hellogod.cn/2017-08-29/七夕的一些小感慨/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曹真">
-      <meta itemprop="description" content="微信公众号：一时博客">
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g72zo0c1cxj30u00u0adw.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一时博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017-08-29/七夕的一些小感慨/" class="post-title-link" itemprop="url">七夕的一些小感慨</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-08-29 03:47:38" itemprop="dateCreated datePublished" datetime="2017-08-29T03:47:38+08:00">2017-08-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-01-30 01:17:27" itemprop="dateModified" datetime="2021-01-30T01:17:27+08:00">2021-01-30</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-            <div class="post-description">对于这几天的一个进度总结以及一些小感慨</div>
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>对于这几天的一个进度总结以及一些小感慨。</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs3uxqr7adj30xc0npqe7.jpg" alt><br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017-08-29/七夕的一些小感慨/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2205,7 +2223,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">123</span>
+                    <span class="site-state-item-count">126</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2286,7 +2304,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2693,7 +2715,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">161</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">164</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
